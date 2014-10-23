@@ -9,7 +9,9 @@ gem 'mysql2'
 gem 'therubyracer'
 gem 'execjs'
 
+#WEIXIN
 gem 'weixin_rails_middleware'
+gem 'twitter_ratchet_rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

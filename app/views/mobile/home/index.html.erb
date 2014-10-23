@@ -1,0 +1,64 @@
+<div id="focus" class="focus">
+	<div class="hd">
+		<ul></ul>
+	</div>
+	<div class="bd">
+		<ul>
+				<li><img a src="/images/mobile/banner/1.jpg" ></li>
+		</ul>
+	</div>
+</div>
+<nav id="nav" >
+	<ul class="nav-list" >		
+		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="height:202px;">
+			<div>
+			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	        商家活动
+			<%end%>
+			</div>
+    </li>
+
+
+		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="width:66.66666%;">
+			<div>
+			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	        目的地攻略
+			<%end%>
+			</div>
+   </li>
+
+		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="width:66.66666%;">
+			<div>
+			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	        推荐优惠
+			<%end%>
+			</div>
+   </li>
+
+		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="height:98px;width:66.66666%;">
+			<div>
+			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	        我的优惠券
+			<%end%>
+			</div>
+   </li>
+		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="height:98px;width:33.3333%;">
+			<div>
+			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	        个人信息
+			<%end%>
+			</div>
+   </li>
+</nav>
+<script type="text/javascript">
+    TouchSlide({
+        slideCell: "#focus",
+        titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".bd ul",
+        effect: "leftLoop",
+        autoPlay: false,//自动播放
+        autoPage: true, //自动分页
+        switchLoad: "_src" //切换加载，真实图片路径为"_src" 
+    });
+    
+</script>
