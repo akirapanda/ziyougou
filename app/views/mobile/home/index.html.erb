@@ -18,18 +18,17 @@
 			</div>
     </li>
 
-
-		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="width:66.66666%;">
+		<li onclick="javascript: window.location.href='<%=mobile_trip_guides_path%>';" class="nav-item" style="width:66.66666%;">
 			<div>
-			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+			<%=link_to mobile_trip_guides_path, "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
 	        目的地攻略
 			<%end%>
 			</div>
    </li>
 
-		<li onclick="javascript: window.location.href='<%=mobile_root_path%>';" class="nav-item" style="width:66.66666%;">
+		<li onclick="javascript: window.location.href='<%=mobile_recommend_events_path%>';" class="nav-item" style="width:66.66666%;">
 			<div>
-			<%=link_to "#", "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+			<%=link_to mobile_recommend_events_path, "data-ignore"=>"push", "data-transition"=>"slide-in" do%>
 	        推荐优惠
 			<%end%>
 			</div>

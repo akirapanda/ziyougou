@@ -11,7 +11,8 @@ Ziyougou::Application.routes.draw do
   namespace :mobile do
     root :to => 'home#index'
     resources :shops
-  
+    resources :trip_guides
+    resources :recommend_events
   end
   
 end
