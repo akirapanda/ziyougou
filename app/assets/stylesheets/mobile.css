@@ -13,6 +13,12 @@
  *= require font-awesome
  *= require mobile/nav
  */
+
+h1{
+	color:white;
+	text-align:center;
+	padding-top:10px;
+}
 .content{
 	background: url('/images/black-bg.png') repeat; 
 }

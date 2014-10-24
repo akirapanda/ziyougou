@@ -1,0 +1,27 @@
+<style>
+ .media-body{
+	 padding-top:10px;
+	 padding-left:10px;
+	}
+	.media-body p{
+		margin-top:5px;
+	}
+	.media-object{
+		border-radius:10px;
+	}
+</style>
+<ul class="table-view">
+	<%@shops.each do |shop|%>
+		<li class="table-view-cell media">
+			<%=link_to [:mobile,shop], :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+					<image class="media-object pull-left" src="/images/100_100.jpg">
+		      <div class="media-body">
+						 商户	 A 
+						<p>电话:xxxxxx</p>
+						<p>地址:xxxxxx</p>
+		      </div>
+			<%end%>
+		</li>	
+	<%end%>
+
+</ul>

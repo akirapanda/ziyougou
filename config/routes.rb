@@ -10,6 +10,7 @@ Ziyougou::Application.routes.draw do
 
   namespace :mobile do
     root :to => 'home#index'
+    resources :shops
   
   end
   

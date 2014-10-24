@@ -1,0 +1,63 @@
+<style>
+	.content{
+		background:#F5F5F5;
+	}
+	.shop-header{
+		background-color:white;
+		height:120px;
+		padding:10px 10px 10px 10px;
+	}
+	.shop-header .shop-logo{
+	}
+	
+	h1{
+		color:black;
+		font-size:18px;
+	}
+	
+	h3{
+		color:black;
+		font-size:14px;
+	}
+		
+	.shop-event-header{
+		background-color:#F5F5F5;
+	}
+</style>
+<ul class="table-view">
+	<li class="table-view-cell">
+		<image src="/images/100_100.jpg" class="shop-logo pull-left">
+		<h1><%=@shop.name%></h1>
+	</li>
+	<li class="table-view-cell">
+		<%=link_to "#", :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+			<i class="fa fa-map-marker"></i> <%=@shop.address%>
+		<%end%>
+	</li>
+	<li class="table-view-cell">
+		<%=link_to "#", :class=>"","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+			<i class="fa fa-phone"></i> <%=@shop.phone%>
+		<%end%>
+	</li>
+	
+	<li class="table-view-cell shop-event-header">
+		<h3><i class="fa fa-star-o"></i>商户介绍</h3>
+	</li>
+	<li class="table-view-cell">
+		sadas sad a sadsa das  sad a sa asd as
+		sadas  sa dsa  s dad s da sa da sss s a a 
+	</li>
+	
+	
+	
+	<li class="table-view-cell shop-event-header">
+		<h3><i class="fa fa-tags"></i>优惠活动</h3>
+	</li>
+	<li class="table-view-cell">
+		直返优惠券
+		<p>十一开业大酬宾,只要出示本优惠券便可直接享受优惠</p>
+		<button class="btn btn-primary">领取</button>
+	</li>
+	
+	
+</ul>
