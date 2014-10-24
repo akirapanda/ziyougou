@@ -1,0 +1,13 @@
+<ul class="table-view">
+	<%@recommend_events.each do |event|%>
+		<li class="table-view-cell media">
+			<%=link_to [:mobile,event], :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+					<image class="media-object pull-left" src="/images/100_100.jpg">
+		      <div class="media-body">
+						<%=event.title%>
+						<p><%=event.brief%></p>
+		      </div>
+			<%end%>
+		</li>	
+	<%end%>
+</ul>

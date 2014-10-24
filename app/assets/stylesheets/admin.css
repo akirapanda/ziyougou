@@ -1,0 +1,34 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require admin/bootstrap/bootstrap.css
+ *= require admin/bootstrap/bootstrap-responsive.css
+ *= require admin/jquery_ui/jquery-ui-1.10.0.custom
+ *= require admin/jquery_ui/jquery.ui.1.10.0.ie
+ *= require admin/plugins/bootstrap_switch/bootstrap-switch
+ *= require admin/plugins/xeditable/bootstrap-editable
+ *= require admin/plugins/common/bootstrap-wysihtml5
+ *= require admin/plugins/jquery_fileupload/jquery.fileupload-ui
+ *= require admin/plugins/fullcalendar/fullcalendar
+ *= require admin/plugins/select2/select2
+ *= require admin/plugins/mention/mention
+ *= require admin/plugins/tabdrop/tabdrop
+ *= require admin/plugins/jgrowl/jquery.jgrowl.min
+ *= require admin/plugins/datatables/bootstrap-datatable
+ *= require admin/plugins/dynatree/ui.dynatree
+ *= require admin/plugins/bootstrap_colorpicker/bootstrap-colorpicker
+ *= require admin/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min
+ *= require admin/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker
+ *= require admin/plugins/flags/flags
+ *= require admin/plugins/slider_nav/slidernav
+ *= require admin/plugins/fuelux/wizard
+ *= require admin/light-theme
+ *= require font-awesome.css
+ */
