@@ -1,6 +1,8 @@
 
 <%= grid(@shops_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
-	
+	g.column :name => "地址" ,:attribute => "logo"  do |shop|
+		image_tag shop.logo_url(:small)
+	end
 	g.column :name => '名称', :attribute => 'name'  do |shop|
 		link_to shop.name,[:admin,shop]
 	end

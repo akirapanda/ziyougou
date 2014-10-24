@@ -59,3 +59,4 @@
 //= require admin/nav.js
 //= require admin/tables.js
 //= require admin/theme.js
+//= require ckeditor/init

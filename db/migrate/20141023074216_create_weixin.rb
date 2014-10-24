@@ -31,7 +31,7 @@ class CreateWeixin < ActiveRecord::Migration
     end
     
     create_table :shops do |t|
-      t.string :country
+      t.string :nation
       t.string :area
       t.string :name
       t.string :address

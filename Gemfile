@@ -14,6 +14,10 @@ gem 'weixin_rails_middleware'
 gem 'twitter_ratchet_rails'
 
 
+# 上传组件
+gem 'carrierwave', '0.6.2'
+gem 'mini_magick'
+
 #pageinate
 gem 'wice_grid'
 gem 'kaminari'
@@ -24,6 +28,7 @@ gem "ransack"
 #Simple Form
 gem 'simple_form'
 gem 'bootstrap_helper', github: 'akirapanda/bootstrap-helper'
+gem 'ckeditor'
 
 
 # Use SCSS for stylesheets

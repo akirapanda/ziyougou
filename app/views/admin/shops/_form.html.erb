@@ -1,0 +1,18 @@
+<%=render 'shared/error_messages',:target=>@shop%>
+
+<%=simple_form_for([:admin,@shop],:html=>{:class=>"form-horizontal"}) do |f|%>
+	<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
+	<%= f.input :logo%>
+	
+	<%= f.input :nation,:input_html=>{:class=>"input-xxlarge"}%>	
+	<%= f.input :area,:input_html=>{:class=>"input-xxlarge"}%>		
+	<%= f.input :address,:input_html=>{:class=>"input-xxlarge"}%>		
+	
+	<%= f.input :phone,:input_html=>{:class=>"input-xxlarge"}%>		
+	<%= f.cktext_area :content,:input_html=>{:class=>"form-control"}, :ckeditor => { :height => 500 }%>
+	
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary">保存</button> 
+		<%=link_to "返回列表", admin_shops_path,:class=>"btn"%>
+	</div> 
+<%end%>

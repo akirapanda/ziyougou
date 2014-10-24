@@ -1,4 +1,5 @@
 Ziyougou::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   mount WeixinRailsMiddleware::Engine, at: "/"
 
 
