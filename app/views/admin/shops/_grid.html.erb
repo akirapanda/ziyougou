@@ -1,6 +1,5 @@
-
 <%= grid(@shops_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
-	g.column :name => "地址" ,:attribute => "logo"  do |shop|
+	g.column :name => "商标	" ,:attribute => "logo"  do |shop|
 		image_tag shop.logo_url(:small)
 	end
 	g.column :name => '名称', :attribute => 'name'  do |shop|
@@ -10,9 +9,6 @@
 	g.column :name => "地址" ,:attribute => "address"
 
 	g.column :name => "电话" ,:attribute => "phone"
-
-
-
 
 	g.column do |shop|
 		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_shop_path(shop)

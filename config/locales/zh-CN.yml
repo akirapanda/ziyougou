@@ -1,0 +1,43 @@
+"zh-CN":
+    "true": "是"
+    "false": "否"   
+    activerecord:
+        models:
+            wx_article: "微信图文消息"
+            wx_keyword: "微信关键字"
+        attributes:
+            wx_keyword:
+                keyword: "关键字"
+                hidden: "激活"
+            wx_article:
+                title: "标题"
+                breif: "简介"
+                cover: "封面"
+                hidden: "隐藏"
+                content: "正文"
+                public_flag: "是否收费阅读"
+            wx_chapter:
+                title: "标题"
+                breif: "简介"
+                cover: "封面"
+                hidden: "隐藏"
+                content: "正文"
+                public_flag: "是否收费阅读"
+                wx_lesson_id: "所属课程列表"
+            wx_user:
+                username: "用户名"
+                name: "姓名"
+                phone: "联系手机"
+                start_time: "会员开始时间"
+                end_time: "会员到期时间"
+                year: "购买年限"
+                password: "密码"
+                remark: "备注"
+                wx_role_id: "用户权限"
+                status: "状态"
+                open_id: "微信ID"
+            user:
+                email: "用户名"
+                password: "密码"
+                password_confirmation: "密码确认"
+                role: "权限"
