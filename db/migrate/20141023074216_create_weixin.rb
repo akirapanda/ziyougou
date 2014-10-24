@@ -57,6 +57,7 @@ class CreateWeixin < ActiveRecord::Migration
     end
     
     create_table :discount_events do |t|
+      t.integer :shop_id
       t.string :name
       t.string :event_type
       t.datetime :begin_at

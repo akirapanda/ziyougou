@@ -1,4 +1,9 @@
 class  Admin::ShopsController < Admin::BaseController  
+    def discount_events
+      @shop = Shop.find(params[:id]) 
+      @discount_events_grid = initialize_grid(@shop.discount_events,:per_page => 10)
+    end
+  
     def index
       @q = Shop.search(params[:q])
       @shops = @q.result(distinct: true)

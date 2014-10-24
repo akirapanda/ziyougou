@@ -1,0 +1,21 @@
+<%= grid(@discount_events_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+
+	g.column :name => '活动名称', :attribute => 'name'  do |event|
+		link_to event.name,[:admin,event]
+	end
+
+	g.column :name => "商户名称", :attribute => 'shop_id'  do |event|
+		link_to event.try(:shop).try(:name), [:admin,event.shop] if event.shop
+	end
+	
+	g.column :name => "有效期(起)" ,:attribute => "begin_at"
+
+	g.column :name => "有效期(止)" ,:attribute => "end_at"
+
+	g.column do |event|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_discount_event_path(event)
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,event], method: :delete, data: { confirm: '确认删除商户优惠活动记录吗?' }
+		raw "#{edit} #{remove}"
+	end
+	
+end -%>

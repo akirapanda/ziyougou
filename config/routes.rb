@@ -5,7 +5,16 @@ Ziyougou::Application.routes.draw do
 
   namespace :admin do
     root :to => 'home#index'
-    resources :shops
+    resources :shops do
+      member do 
+        get "discount_events"
+      end
+    end
+    
+    resources :discount_events
+    resources :discount_codes
+    
+     
   
   
   end
