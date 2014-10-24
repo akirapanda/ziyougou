@@ -11,7 +11,11 @@ Ziyougou::Application.routes.draw do
       end
     end
     
-    resources :discount_events
+    resources :discount_events do
+      member do 
+        get "discount_codes"
+      end
+    end
     resources :discount_codes
     
      

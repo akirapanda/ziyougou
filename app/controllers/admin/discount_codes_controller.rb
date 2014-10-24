@@ -1,27 +1,17 @@
-class  Admin::DiscountEventsController < Admin::BaseController  
+class  Admin::DiscountCodesController < Admin::BaseController  
   
-  
-    def discount_codes
-      @discount_event = DiscountEvent.find(params[:id]) 
-      @discount_codes_grid = initialize_grid(@discount_event.discount_codes,:per_page => 20)
-    end
-    
-    
     def index
-      @q = DiscountEvent.search(params[:q])
-      @discount_events = @q.result(distinct: true)
-      @discount_events_grid = initialize_grid(@discount_events,:per_page => 50)
+      @q = DiscountCode.search(params[:q])
+      @discount_codes = @q.result(distinct: true)
+      @discount_codes_grid = initialize_grid(@discount_codes,:per_page => 50)
     end
     
     def show
-      @discount_event = DiscountEvent.find(params[:id]) 
+      @discount_code = DiscountCode.find(params[:id]) 
     end
     
     def new
-      @discount_event = DiscountEvent.new
-      if params[:shop_id]
-        @discount_event.shop_id = params[:shop_id]
-      end
+      @discount_code = DiscountCode.new
     end
 
     def create

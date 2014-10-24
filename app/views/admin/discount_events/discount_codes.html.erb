@@ -1,0 +1,48 @@
+<%= content_for :title do %>
+	商户优惠活动-优惠代码列表
+<% end %>
+
+<%=render 'header_nav'%>
+<div class='box bordered-box blue-border'>
+  <div class='box-header blue-background'>
+	  <div class='title'>
+			<%=@discount_event.name%>
+		</div>
+	</div> <!-- /widget-header -->		
+	
+  <div class='box-content box-double-padding'>
+			<div class="row-fluid">
+				<div class="span4">
+					<%=image_tag @discount_event.shop.logo_url(:small) if @discount_event.shop%>
+					<br/>
+					<br/>
+					<b>初次创建时间:</b>:
+					<p><%=l @discount_event.created_at %></p>
+					<b>最后编辑时间</b>:
+					<p><%=l @discount_event.updated_at %></p>
+					<b>商家名称:</b>
+					<p><%=@discount_event.shop.name if @discount_event.shop %></p>
+					<b>活动类型:</b>
+					<p><%=@discount_event.event_type %></p>
+					<b>活动有效期限:</b>
+					<p><%=l @discount_event.begin_at if  @discount_event.begin_at%>  ~ 
+						<%=l @discount_event.end_at  if  @discount_event.end_at %></p>
+				</div>
+				
+				<div class="span8">
+					
+				</div>	
+			</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group pull-left">
+		<%=link_to "返回列表",admin_shops_path,:class=>"btn"%>
+	
+	</div>
+	<div class="btn-group pull-right">
+		<%=link_to "编辑",edit_admin_discount_event_path(@discount_event),:class=>"btn btn-primary"%>
+		<%=link_to "删除",[:admin,@discount_event],:method=>:delete,:class=>"btn btn-danger"%>
+	</div>
+</div>
