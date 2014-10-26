@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   def active_side_link(target)
 		if ( controller_name && target.index(controller_name) )
       "active" 

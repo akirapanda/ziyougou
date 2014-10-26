@@ -29,6 +29,14 @@ Ziyougou::Application.routes.draw do
     resources :shops
     resources :trip_guides
     resources :recommend_events
+    
+    
+    resources :users
+    resources :sessions, only: [:new, :create, :destroy]
+    match '/signup',    to: 'users#new',              via: 'get'
+    match '/signin',    to: 'sessions#new',           via: 'get'
+    match '/signout',   to: 'sessions#destroy',       via: 'delete'
+    match '/index',     to: 'home#index',             via: 'get'
   end
   
 end
