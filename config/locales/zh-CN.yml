@@ -41,3 +41,4 @@
                 password: "密码"
                 password_confirmation: "密码确认"
                 role: "权限"
+                mobile: "手机号"

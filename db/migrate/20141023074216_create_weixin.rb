@@ -53,7 +53,8 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :passport_no
       t.string :gender
       t.string :status
-      t.timestamp
+      t.string :last_ip
+      t.timestamps
     end
     
     create_table :discount_events do |t|
@@ -80,6 +81,7 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :gender
       t.datetime :leave_at
       t.string :status
+      t.timestamps  
     end
     
     

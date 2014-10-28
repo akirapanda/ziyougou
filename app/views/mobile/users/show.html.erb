@@ -1,0 +1,34 @@
+<style>
+	.red_button{
+		color:white;
+		background-color:red;
+		padding:3px 3px 3px 3px;
+		margin-left:0px;
+	}
+	.content{
+		background-color:#F7F7F7;
+	}
+	
+	h2{
+		color:white;
+	}
+</style>
+
+<div class="content-padded">
+	<h2>
+		<i class="fa fa-user "></i>
+		会员信息
+	</h2>
+	<hr/>
+	<ul class="table-view">
+	  <li class="table-view-cell">
+	      手机:<%=@user.mobile%>
+	  </li>
+	  <li class="table-view-cell">
+	      姓名:<%=@user.name%>
+	  </li>
+	</ul>
+	
+	<button class="btn btn-block">注销登陆</button>
+</div>
+

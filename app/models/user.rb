@@ -1,8 +1,9 @@
 require 'digest/md5' 
 
 class User < ActiveRecord::Base
-  validates :phone,:password,:presence => true
-  validates :phone, uniqueness: true
+  validates :mobile, uniqueness: true
+  validates :mobile,:password,:presence => true
+  validates :password, confirmation: true
   
   OK_STATUS = "正常"
   BLOCK_STATUS = "停用"

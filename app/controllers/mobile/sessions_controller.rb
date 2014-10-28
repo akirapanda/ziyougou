@@ -4,7 +4,7 @@ class Mobile::SessionsController < Mobile::BaseController
   end
 
   def create
-    user = WxUser.find_by(username: params[:session][:username])
+    user = User.find_by(phone: params[:session][:phone])
     if user && user.authenticate(params[:session][:password])
       wx_sign_in user
       user.update_attribute(:ip, request.remote_ip)

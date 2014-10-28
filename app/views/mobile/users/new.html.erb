@@ -1,16 +1,19 @@
 <div class="register-container container">
     <div class="row">
         <div class="register span12">
-					<%= form_for(:session, url: mobile_sessions_path ,:html=>{:class=>"input-group"}) do |f| %>
+					<%= form_for([:mobile,@user] ,:html=>{:class=>"input-group"}) do |f| %>
+					<%= render 'shared/error_messages', target: f.object %>
+	        
           <h3>注册 <span class="red"><strong>自由购物帮</strong></span></h3>
-						<%=f.label :phone%>
-						<%=f.text_field :phone,:placeholder=>"手机号"%>
+						<%=f.label :mobile%>
+						<%=f.text_field :mobile,:placeholder=>"手机号"%>
 				    
 						<%=f.label :password%>
-						<%=f.text_field :password,:placeholder=>"密码"%>
+						<%=f.password_field :password,:placeholder=>"密码"%>
 						
-						<%=f.label :password_confrimation%>
-						<%=f.text_field :password_confrimation,:placeholder=>"确认密码"%>
+						<%=f.label :password_confirmation%>
+						
+						<%=f.password_field :password_confirmation,:placeholder=>"确认密码"%>
 						<button class="btn btn-primary btn-block">注册</button>
 					<%end%>
         </div>

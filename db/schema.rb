@@ -41,9 +41,12 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.string   "gender"
     t.datetime "leave_at"
     t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "discount_events", force: true do |t|
+    t.integer  "shop_id"
     t.string   "name"
     t.string   "event_type"
     t.datetime "begin_at"
@@ -90,16 +93,19 @@ ActiveRecord::Schema.define(version: 20141024152829) do
   end
 
   create_table "users", force: true do |t|
-    t.string  "email"
-    t.string  "mobile"
-    t.string  "password"
-    t.string  "salt"
-    t.integer "point"
-    t.decimal "balance_amount", precision: 10, scale: 0
-    t.string  "name"
-    t.string  "passport_no"
-    t.string  "gender"
-    t.string  "status"
+    t.string   "email"
+    t.string   "mobile"
+    t.string   "password"
+    t.string   "salt"
+    t.integer  "point"
+    t.decimal  "balance_amount", precision: 10, scale: 0
+    t.string   "name"
+    t.string   "passport_no"
+    t.string   "gender"
+    t.string   "status"
+    t.string   "last_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "wx_users", force: true do |t|
