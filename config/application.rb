@@ -26,7 +26,7 @@ module Ziyougou
     config.time_zone = 'Beijing'
     config.active_record.default_timezone = :local
     
-    config.assets.precompile += %w(mobile.css mobile.js bootstrap.css bootstrap.js mobile_login.css mobile_login.js)    
+    config.assets.precompile += %w(mobile.css mobile.js bootstrap.css bootstrap.js mobile_login.css mobile_login.js admin.js admin.css)    
     
   end
 end
