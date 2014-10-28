@@ -14,8 +14,17 @@
 						<%=f.label :new_password_confirmation%>
 						
 						<%=f.password_field :new_password_confirmation,:placeholder=>"确认密码"%>
-						<button class="btn btn-primary btn-block">注册</button>
+						<input type="checkbox" value="checkbox1" style="width:30px" checked disabled/ >
+						<a href="#agreement" role="button"  data-toggle="modal">我已经阅读《用户协议》</a>
+						<button class="btn btn-primary">注册</button>
+
 					<%end%>
         </div>
     </div>
 </div>
+<%= link_to mobile_signin_path,:class=>"btn pull-right", "data-ignore"=>"push" do%>
+ 	返回登录
+<%end%>
+
+
+<%=render 'agreement'%>

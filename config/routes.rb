@@ -17,9 +17,6 @@ Ziyougou::Application.routes.draw do
       end
     end
     resources :discount_codes
-    
-     
-  
   
   end
     
@@ -37,6 +34,12 @@ Ziyougou::Application.routes.draw do
     match '/signin',    to: 'sessions#new',           via: 'get'
     match '/signout',   to: 'sessions#destroy',       via: 'delete'
     match '/index',     to: 'home#index',             via: 'get'
+    
+    
+    resources :discount_codes
+    resources :discount_events
+    
+    
   end
   
 end

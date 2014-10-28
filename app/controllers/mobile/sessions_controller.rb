@@ -1,5 +1,6 @@
 class Mobile::SessionsController < Mobile::BaseController
-  layout 'mobile_login'
+  layout 'mobile_login'         
+  
   def new
     if user_signed_in?
       redirect_to [:mobile,current_user]

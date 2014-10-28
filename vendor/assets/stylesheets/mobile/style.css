@@ -127,17 +127,18 @@ a:hover { text-decoration: none; }
 .register form input:-ms-input-placeholder { color: #aaa; }
 .register form input::-webkit-input-placeholder { color: #aaa; }
 
-.register form button {
+.register form button{
     cursor: pointer;
     width: 60%;
     height: 42px;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 0;
-    background: #eb4141;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     border: 0;
+	background: #eb4141;
+
     -moz-box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
     -webkit-box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
     box-shadow: 0 15px 30px 0 rgba(255,255,255,.1) inset;
