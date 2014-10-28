@@ -43,8 +43,8 @@
 	</div>
 <% end %>
 <%= form_for(:session, url: mobile_sessions_path ,:html=>{:class=>"input-group"}) do |f| %>
-  <div class="user" style="margin:10px auto;">
-		<%=f.text_field :username,:placeholder=>"用户名"%>
+  <div class="mobile" style="margin:10px auto;">
+		<%=f.text_field :mobile,:placeholder=>"手机"%>
 	  </div>
   <div class="pwd" style="margin:10px auto;">
 		<%=f.password_field :password,:placeholder=>"密码"%>

@@ -17,7 +17,13 @@ module UserHelper
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id] 
+    begin
+      @current_user ||= User.find(session[:user_id]) if session[:user_id] 
+    rescue
+      user_sign_out
+    end
+    @current_user
+    
   end
 
   def current_user?(user)

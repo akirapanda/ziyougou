@@ -18,6 +18,7 @@ class  Mobile::UsersController < Mobile::BaseController
    
   def create
     @user = User.new(user_params)
+    @user.password = @user.new_password
     if @user.save
       user_sign_in @user
       @user.update_attribute(:last_ip, request.remote_ip)

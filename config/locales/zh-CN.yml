@@ -39,6 +39,8 @@
             user:
                 email: "用户名"
                 password: "密码"
-                password_confirmation: "密码确认"
+                new_password: "密码确认"
+                
+                new_password_confirmation: "密码确认"
                 role: "权限"
                 mobile: "手机号"
