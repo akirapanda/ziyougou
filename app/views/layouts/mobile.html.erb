@@ -35,10 +35,19 @@
 			<%end%>
 			
 			
-				<%=link_to "#", :class=>"tab-item","data-ignore"=>"push"  do%>
+			<%if current_user%>			
+				<%=link_to passport_mobile_user_path(current_user), :class=>"tab-item","data-ignore"=>"push"  do%>
 			    <span class="icon fa fa-tags"></span>
 			    <span class="tab-label">我的优惠券</span>
 				<%end%>
+			<%else%>
+				<%=link_to mobile_signin_path, :class=>"tab-item","data-ignore"=>"push"  do%>
+			    <span class="icon fa fa-tags"></span>
+			    <span class="tab-label">我的优惠券</span>
+				<%end%>
+			<%end%>
+			
+
 
 
 			

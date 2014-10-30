@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates :mobile,length: { is: 11 }
   validates :mobile, format: { with: /\A\+?[\d]*-?[\d]*\z/, message: ' 电话只能输入数字'}
 
+  has_many :discount_codes
+  
   
   OK_STATUS = "正常"
   BLOCK_STATUS = "停用"

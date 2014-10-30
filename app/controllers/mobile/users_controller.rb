@@ -1,6 +1,11 @@
 class  Mobile::UsersController < Mobile::BaseController  
   layout 'mobile_login', only: [:new, :forgot_password, :password_reset]          
-         
+  
+  def passport
+    @user = User.find(params[:id])
+    @codes = @user.discount_codes 
+    render layout: "mobile"
+  end      
          
   def show
     @user = User.find(params[:id])

@@ -6,6 +6,8 @@ class DiscountEvent < ActiveRecord::Base
   
   scope :active, -> { where("(begin_at is null or begin_at < now()  )  and  (end_at is null or end_at > now()  )") }
   
+  mount_uploader :ticket_image, TicketUploader
+  
   Types = ["公开","预约"]
   
   def is_public_event?

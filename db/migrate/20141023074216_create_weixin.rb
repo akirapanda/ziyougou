@@ -79,6 +79,7 @@ class CreateWeixin < ActiveRecord::Migration
       t.datetime :publish_at
       t.boolean :is_visible,:default=>true
       t.integer :discount_codes_count
+      t.string :ticket_image
       t.timestamps
     end
     

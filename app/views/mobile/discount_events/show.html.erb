@@ -47,7 +47,7 @@ header.bar{
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
+
 	.footer{
 		text-align: center;
 		
@@ -67,11 +67,17 @@ header.bar{
 
 <div class="detail">
 	<%=raw @event.content%>
+	
 	<div class="download-bar">
-
-		<div ><i class="fa fa-download">下载到手机</i></div>
-		<div ><i class="fa fa-book">添加至我的优惠券</i></div>
+		<%if @event.is_public_event?%>
+			<%=image_tag @event.ticket_image_url%>
+			<br/>
+			<div ><i class="fa fa-download">下载到手机</i></div>
+			<div ><i class="fa fa-book">添加至我的优惠券</i></div>
+		<%else%>
 		
+		
+		<%end%>
 	</div>
 </div>
 
