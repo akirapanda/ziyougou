@@ -74,8 +74,8 @@ class CreateWeixin < ActiveRecord::Migration
       t.text :content, :limit => 4294967295
       
       t.string :event_type
-      t.datetime :begin_at
-      t.datetime :end_at
+      t.date :begin_at
+      t.date :end_at
       t.datetime :publish_at
       t.boolean :is_visible,:default=>true
       t.integer :discount_codes_count
@@ -87,8 +87,8 @@ class CreateWeixin < ActiveRecord::Migration
       t.integer :user_id
       t.string :image
       t.string :code
-      t.datetime :begin_at
-      t.datetime :end_at
+      t.date :begin_at
+      t.date :end_at
       t.string :name
       t.string :passport_no
       t.string :gender

@@ -26,6 +26,7 @@
     <div class="content">
       <%= yield %>
     </div>
+    <%= yield :header %>
 
 		<nav class="bar bar-tab">
 			<%=link_to mobile_root_path, :class=>"tab-item","data-ignore"=>"push"  do%>

@@ -1,0 +1,80 @@
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title">优惠券详请</h1>
+	</header>
+<% end %>
+<style>
+.content{
+	background:#F5F5F5;
+}
+
+header.bar{
+	background:#F5F5F5;
+}
+  .intro,.detail{
+		padding-bottom:10px;
+		padding-top:20px;
+		
+		padding-left:20px;
+		background-color:white;
+		border-bottom: 1px dashed #333333
+	}
+	
+	.intro{
+		padding-top:60px;
+	}
+	.orange {
+		
+		color:orange;
+	}
+	
+	.intro p{
+		margin-top:10px;
+	}
+	
+	.download-bar {
+		padding-top:20px;
+		text-align: center;
+	}
+
+	.download-bar div .fa-download{
+		color:red;
+	}
+	.download-bar div {
+		padding-left:30px;
+		display:inline;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.footer{
+		text-align: center;
+		
+		padding-bottom:10px;
+		padding-top:20px;
+		
+		padding-left:20px;
+		color:grey;
+		font-size:13px;
+	}
+</style>
+<div class="intro">
+	<h3><%=@event.shop.name%></h3>
+	<p class="orange"><%=@event.name%></p>
+	<p class="effect-date">有效期:<%= l @event.begin_at if @event.begin_at%> ~ <%= l @event.end_at if @event.end_at%></p>
+</div>
+
+<div class="detail">
+	<%=raw @event.content%>
+	<div class="download-bar">
+
+		<div ><i class="fa fa-download">下载到手机</i></div>
+		<div ><i class="fa fa-book">添加至我的优惠券</i></div>
+		
+	</div>
+</div>
+
+<div class="footer">
+	除特殊注明外，本优惠不能与其他优惠同时享受
+</div>
