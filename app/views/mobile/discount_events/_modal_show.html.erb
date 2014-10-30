@@ -1,0 +1,22 @@
+<style>
+h1 {
+	color:red;
+}
+#remodal_window section{
+	text-align:left;
+}
+
+</style>
+
+<div id="remodal_window" class="remodal" data-remodal-id="modal">
+    <h1><%=event.name%></h1>
+		<section>
+		<%=raw event.content%>
+		</section>
+		
+		<hr/>
+		<a class="remodal-cancel" href="#">关闭</a>
+		<%=link_to  apply_mobile_discount_event_path(event),:class=>"remodal-button","data-ignore"=>"push" do%>
+			<i class="fa fa-editor"></i>申请	
+		<%end%>
+</div>

@@ -11,6 +11,8 @@
  *= require_self
  *= require ratchet_base
  *= require font-awesome
+ *= require jquery.remodal
+
  *= require mobile/nav
  */
 

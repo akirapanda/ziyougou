@@ -23,9 +23,12 @@ Ziyougou::Application.routes.draw do
 
   namespace :mobile do
     root :to => 'home#index'
+    resources :sellers
+    
     resources :shops
     resources :trip_guides
-    resources :recommend_events
+    resources :recommend_events 
+    
     
     
     resources :users
@@ -37,7 +40,11 @@ Ziyougou::Application.routes.draw do
     
     
     resources :discount_codes
-    resources :discount_events
+    resources :discount_events do
+      member do
+        get 'apply'
+      end
+    end
     
     
   end

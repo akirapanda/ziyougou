@@ -8,5 +8,13 @@ class DiscountEvent < ActiveRecord::Base
   
   Types = ["公开","预约"]
   
+  def is_public_event?
+    self.event_type == "公开"
+  end
+  
+  def is_private_event?
+    self.event_type == "预约"
+  end
+  
   
 end

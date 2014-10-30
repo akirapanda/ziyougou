@@ -31,9 +31,9 @@ module UserHelper
   end
 
   def signed_in_user
-    unless signed_in?
+    unless user_signed_in?
       store_location
-      redirect_to signin_url, notes: "请登入"
+      redirect_to mobile_signin_url, :flash => {:notice => "请登入"} 
     end
   end
 

@@ -30,6 +30,15 @@ class CreateWeixin < ActiveRecord::Migration
       t.timestamps
     end
     
+    create_table :sellers do |t|
+      t.string :name
+      t.string :logo
+      t.string :intro
+      t.text :content, :limit => 4294967295
+      t.integer :rate
+      t.timestamps
+    end
+    
     create_table :shops do |t|
       t.string :nation
       t.string :area
@@ -37,6 +46,7 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :address
       t.string :phone
       t.string :logo
+      t.integer :seller_id
       t.text :content, :limit => 4294967295
       t.timestamps
     end
@@ -60,6 +70,9 @@ class CreateWeixin < ActiveRecord::Migration
     create_table :discount_events do |t|
       t.integer :shop_id
       t.string :name
+      t.string :intro
+      t.text :content, :limit => 4294967295
+      
       t.string :event_type
       t.datetime :begin_at
       t.datetime :end_at

@@ -1,44 +1,60 @@
 {
-    "button": [
-        {
-            "name": "商户活动", 
-            "sub_button": [
-                {
-                    "type": "click", 
-                    "name": "商户信息", 
-                    "key": "BUTTON_1_1", 
-                    "sub_button": [ ]
-                }, 
-                {
-                    "type": "click", 
-                    "name": "目的地攻略", 
-                    "key": "BUTTON_1_2", 
-                    "sub_button": [ ]
-                }, 
-                {
-                    "type": "click", 
-                    "name": "优惠推荐", 
-                    "key": "BUTTON_1_3", 
-                    "sub_button": [ ]
-                }
-            ]
-        }, 
-        {
-            "type": "click", 
-            "name": "会员中心", 
-            "key": "BUTTON_2_1", 
-            "sub_button": [ ]
-        }, 
-        {
-            "type": "click", 
-            "name": "使用帮助", 
-            "key": "BUTTON_3_1", 
-            "sub_button": [ ]
-        }
-    ]
-}
+        "button": [
+            {
+                "name": "帮主优惠", 
+                "sub_button": [
+                    {
+                        "type": "click", 
+                        "name": "商户优惠", 
+                        "key": "BUTTON_1_1", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "帮主推荐", 
+                        "key": "BUTTON_1_2", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "小帮优品", 
+				                "url": "http://m.wsq.qq.com/263468523", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }, 
+            {
+                "type": "click", 
+                "name": "帮主介绍", 
+                "key": "BUTTON_2_1", 
 
-
+                "sub_button": [ ]
+            }, 
+            {
+                "name": "小帮账户", 
+								"sub_button": [
+                    {
+                        "type": "view", 
+                        "name": "注册/登陆", 
+				                "url": "http://ziyougou.newnil.com/mobile", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "click", 
+                        "name": "小帮优惠券", 
+                        "key": "BUTTON_3_2", 
+                        "sub_button": [ ]
+                    }, 
+                    {
+                        "type": "view", 
+                        "name": "问题反馈", 
+				                "url": "https://jinshuju.net/f/HiwQTV", 
+                        "sub_button": [ ]
+                    }
+                ]
+            }
+        ]
+    }
 
 lkfjale@126.com
 wykj12345

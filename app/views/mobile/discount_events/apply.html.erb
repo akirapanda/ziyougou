@@ -1,0 +1,54 @@
+<style>
+	.content{
+		background:#F5F5F5;
+	}
+	.shop-header{
+		background-color:white;
+		height:120px;
+		padding:10px 10px 10px 10px;
+	}
+	.shop-header .shop-logo{
+	}
+	
+	h1{
+		color:black;
+		font-size:18px;
+	}
+	
+	h3{
+		color:black;
+		font-size:14px;
+	}
+		
+	.shop-event-header{
+		background-color:#F5F5F5;
+	}
+</style>
+<ul class="table-view">
+	<li class="table-view-cell">
+		<h1>优惠券预约申请</h1>
+	</li>
+</ul>
+
+<%=simple_form_for [:mobile,@shopping] ,:html=>{:class=>"input-group"} do |f| %>
+	
+  <div class="input-row">
+		<%=f.input :want_ship,:placeholder=>"如:张三、李同学",:collection=>@times,:include_blank=>false%>
+  </div>
+	<%=f.hidden_field :cart_id%>
+	<%=f.hidden_field :remark%>
+
+  <div class="input-row">
+    <label>联系人</label>
+		<%=f.text_field :customer_name,:placeholder=>"如:张三、李同学"%>
+	</div>
+	<div class="input-row">
+    <label>电话</label>
+		<%=f.text_field :mobile,:placeholder=>"如:13512345678"%>
+	</div>
+	<div class="input-row">
+    <label>地址</label>
+		<%=f.text_field :customer_address,:placeholder=>"如:南校区一公寓1号楼999"%>
+	</div>
+	
+<%end%>
