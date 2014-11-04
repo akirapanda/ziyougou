@@ -7,8 +7,7 @@ class  Mobile::DiscountEventsController < Mobile::BaseController
   
   def download
     @event = DiscountEvent.find(params[:id])
-    send_file("#{Rails.root}/public#{@event.ticket_image_url}",
-              filename: "#{@event.id}.jpg")
+
     
   end
   
