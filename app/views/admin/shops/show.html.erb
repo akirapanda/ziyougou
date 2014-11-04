@@ -18,6 +18,8 @@
 					<br/>
 					<br/>
 					
+					<b>品牌</b>
+					<p><%=link_to @shop.seller.name,[:admin,@shop.seller] if @shop.seller%></p>
 					<b>国家/地区:</b>:
 					<p><%=@shop.nation %> / <%=@shop.area%></p>
 					

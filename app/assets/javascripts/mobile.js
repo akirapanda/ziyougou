@@ -16,3 +16,7 @@
 //= require jquery.remodal
 //= require mobile/isotope.pkgd.min
 //= require mobile/touch_silde
+//= require mobile/mobiscroll.core-2.5.2.js
+//= require mobile/mobiscroll.core-2.5.2-zh.js
+//= require mobile/mobiscroll.datetime-2.5.1.js
+//= require mobile/mobiscroll.datetime-2.5.1-zh.js

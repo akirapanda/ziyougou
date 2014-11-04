@@ -1,4 +1,7 @@
 <%= grid(@discount_events_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+	g.column :name => '系统ID', :attribute => 'id'  do |event|
+		link_to event.id,[:admin,event]
+	end
 
 	g.column :name => '活动名称', :attribute => 'name'  do |event|
 		link_to event.name,[:admin,event]

@@ -16,6 +16,9 @@ class  Admin::ShopsController < Admin::BaseController
     
     def new
       @shop = Shop.new
+      if params[:seller_id].present?
+        @shop.seller_id = params[:seller_id]
+      end
     end
 
     def create

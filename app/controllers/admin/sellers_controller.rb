@@ -23,7 +23,7 @@ class  Admin::SellersController < Admin::BaseController
   end
   
   def edit
-    
+    @seller = Seller.find(params[:id])
   end
   
   def create
@@ -36,7 +36,12 @@ class  Admin::SellersController < Admin::BaseController
   end
   
   def update
-    
+    @seller = Seller.find(params[:id])
+    if @seller.update(seller_params)
+      redirect_to [:admin,@seller],:notice => "编辑品牌成功!"
+    else
+      render 'edit'
+    end
   end
   
   private

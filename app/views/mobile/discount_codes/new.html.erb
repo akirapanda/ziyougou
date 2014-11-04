@@ -37,8 +37,7 @@
 <%=simple_form_for [:mobile,@code] ,:html=>{:class=>"input-group"} do |f| %>
 	<%=f.hidden_field :discount_event_id%>
 	
-  <div class="input-row">
-  </div>
+
 
   <div class="input-row">
     <label>申请人姓名</label>
@@ -52,5 +51,31 @@
     <label>护照号码</label>
 		<%=f.text_field :passport_no,:placeholder=>"如:南校区一公寓1号楼999"%>
 	</div>
+	<div class="input-row">
+    <label>预计出境日期</label>
+		<%=f.text_field :leave_at,:id=>"leave_at" %>
+	</div>
 	<button class="btn btn-primary btn-block">提交</button>
 <%end%>
+
+<script>
+	$(document).ready(function(){
+    var currYear = (new Date()).getFullYear();
+    var opt = {};
+
+    opt.datetime = { preset: 'date' };
+
+
+    opt.defaults = {
+        theme: 'android-ics light', //皮肤样式
+        display: 'modal', //显示方式 
+        mode: 'scroller', //日期选择模式
+        lang: 'zh',
+        startYear: currYear, //开始年份
+        endYear: currYear + 1 //结束年份
+    };
+		
+		var optDateTime = $.extend(opt['datetime'], opt['defaults']);
+		$("#leave_at").mobiscroll(optDateTime);
+	});
+</script>

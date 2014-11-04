@@ -93,10 +93,12 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :code
       t.date :begin_at
       t.date :end_at
+      t.string :mobile
+      
       t.string :name
       t.string :passport_no
       t.string :gender
-      t.datetime :leave_at
+      t.date :leave_at
       t.string :status
       t.timestamps  
     end

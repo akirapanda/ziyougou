@@ -14,6 +14,8 @@
  *= require jquery.remodal
 
  *= require mobile/nav
+ *= require mobile/mobiscroll.core-2.5.2
+ *= require mobile/mobiscroll.animation-2.5.2
  */
 
 h1{
