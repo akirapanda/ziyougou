@@ -1,7 +1,9 @@
 class  Mobile::DiscountCodesController < Mobile::BaseController  
+  
+
+  
   def new
     @code  = DiscountCode.new
-    
     if params[:event_id].present?
       @code.discount_event_id = params[:event_id]
     end
@@ -9,7 +11,6 @@ class  Mobile::DiscountCodesController < Mobile::BaseController
   
   
   def create
-    
     @code = DiscountCode.new(discount_code_params) 
     @code.user_id = current_user.id
     if @code.save

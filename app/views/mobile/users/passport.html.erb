@@ -1,0 +1,29 @@
+<style>
+ .media-body{
+	 padding-top:10px;
+	 padding-left:10px;
+	}
+	.media-body p{
+		margin-top:5px;
+	}
+	.media-object{
+		border-radius:10px;
+	}
+</style>
+
+<ul class="table-view">
+	<%@codes.each do |code|%>
+		<li class="table-view-cell media">
+			<%=link_to [:mobile,code.discount_event], :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+					<%=image_tag code.discount_event.shop.seller.logo_url(:small) ,:class=>"media-object pull-left"%>
+		      <div class="media-body">
+						<%=code.discount_event.name%>
+						<p>有效日期:<%=code.discount_event.end_at%></p>
+						<p>当前状态:<%=code.status%></p>
+						
+		      </div>
+			<%end%>
+		</li>	
+	<%end%>
+</ul>
+
