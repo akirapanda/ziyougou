@@ -73,7 +73,7 @@ header.bar{
 			<%=image_tag @event.ticket_image_url(:small)%>
 			<br/>
 			<div >
-				<%=link_to download_mobile_discount_event_path(@event), "data-ignore"=>"push",:target=>"_blank" do%>
+				<%=link_to download_mobile_discount_event_path(@event), "data-ignore"=>"push" do%>
 				<i class="fa fa-download">下载到手机</i>
 				<%end%>
 			</div>
