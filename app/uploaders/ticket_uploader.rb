@@ -6,7 +6,9 @@ class TicketUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
-
+  version :small do
+    process :resize_to_fit => [320, nil]
+  end
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

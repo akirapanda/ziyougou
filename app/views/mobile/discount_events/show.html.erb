@@ -70,7 +70,7 @@ header.bar{
 	
 	<div class="download-bar">
 		<%if @event.is_public_event?%>
-			<%=image_tag @event.ticket_image_url%>
+			<%=image_tag @event.ticket_image_url(:small)%>
 			<br/>
 			<div >
 				<%=link_to download_mobile_discount_event_path(@event), "data-ignore"=>"push",:target=>"_blank" do%>
