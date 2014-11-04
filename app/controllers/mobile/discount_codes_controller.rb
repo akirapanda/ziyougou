@@ -11,7 +11,7 @@ class  Mobile::DiscountCodesController < Mobile::BaseController
   def create
     
     @code = DiscountCode.new(discount_code_params) 
-    
+    @code.user_id = current_user.id
     if @code.save
       redirect_to [:mobile,@code.discount_event],:notice => "新建品牌成功!"
     else

@@ -36,9 +36,6 @@
 
 <%=simple_form_for [:mobile,@code] ,:html=>{:class=>"input-group"} do |f| %>
 	<%=f.hidden_field :discount_event_id%>
-	
-
-
   <div class="input-row">
     <label>申请人姓名</label>
 		<%=f.text_field :name,:placeholder=>"如:张小二,王全蛋"%>

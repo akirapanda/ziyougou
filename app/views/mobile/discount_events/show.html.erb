@@ -75,10 +75,14 @@ header.bar{
 
 			<div ><i class="fa fa-book">添加至我的优惠券</i></div>
 		<%else%>
-			<%=link_to apply_mobile_discount_event_path(@event), :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
-			
-			<div ><i class="fa fa-edit">预约申请</i></div>
+			<%if has_applied(@event.id)%>
+					<div >已经申请</i></div>
+			<%else%>
+				<%=link_to apply_mobile_discount_event_path(@event), :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+					<div ><i class="fa fa-edit">预约申请</i></div>
+				<%end%>
 			<%end%>
+
 		<%end%>
 	</div>
 </div>
