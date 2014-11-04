@@ -47,6 +47,8 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :address
       t.string :phone
       t.string :logo
+      t.string :business_time
+      t.text :traffic_info
       t.integer :seller_id
       t.text :content, :limit => 4294967295
       t.timestamps

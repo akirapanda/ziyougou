@@ -1,6 +1,8 @@
 <%=render 'shared/error_messages',:target=>@shop%>
 
 <%=simple_form_for([:admin,@shop],:html=>{:class=>"form-horizontal"}) do |f|%>
+	
+	<%= f.input :seller_id,:collection=>Seller.all,:value_method=>:id, :label_method=>:name%>
 	<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
 	<%= f.input :logo%>
 	

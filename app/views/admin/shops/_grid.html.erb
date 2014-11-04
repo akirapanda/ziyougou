@@ -1,9 +1,16 @@
 <%= grid(@shops_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
-	g.column :name => "商标	" ,:attribute => "logo"  do |shop|
+	
+	g.column :name => "门店商标	" ,:attribute => "logo"  do |shop|
 		link_to [:admin,shop] do
 			image_tag shop.logo_url(:small)
 		end
 	end
+	
+	g.column :name => '品牌', :attribute => 'seller_id'  do |shop|
+		link_to shop.seller.name,[:admin,shop.seller] if shop.seller
+	end
+	
+
 	g.column :name => '名称', :attribute => 'name'  do |shop|
 		link_to shop.name,[:admin,shop]
 	end
