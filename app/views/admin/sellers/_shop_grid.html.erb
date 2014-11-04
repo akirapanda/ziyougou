@@ -1,0 +1,17 @@
+<%= grid(@shops_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+
+	g.column :name => '名称', :attribute => 'name'  do |shop|
+		link_to shop.name,[:admin,shop]
+	end
+
+	g.column :name => "地址" ,:attribute => "address"
+
+	g.column :name => "电话" ,:attribute => "phone"
+
+	g.column do |shop|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_shop_path(shop)
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,shop], method: :delete, data: { confirm: '确认删除商户记录吗?' }
+		raw "#{edit} #{remove}"
+	end
+	
+end -%>

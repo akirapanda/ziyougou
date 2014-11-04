@@ -16,9 +16,17 @@
 			    </a>
 			    <ul class='nav nav-stacked <%=active_menu(['shops'])%>'>
 			        <li>
+								<%=link_to admin_sellers_path do%>
+								<i class='icon-caret-right'></i>
+                <span>品牌管理</span>
+								<%end%>
+			        </li>
+			    </ul>
+			    <ul class='nav nav-stacked <%=active_menu(['shops'])%>'>
+			        <li>
 								<%=link_to admin_shops_path do%>
 								<i class='icon-caret-right'></i>
-                <span>商户列表</span>
+                <span>门店管理</span>
 								<%end%>
 			        </li>
 			    </ul>
@@ -27,17 +35,17 @@
 		
 		
 			
-			<li class="<%=active_side_link(['users','weixin_users','qr_code'])%>">
+			<li class="<%=active_side_link(['users'])%>">
 			    <a class='dropdown-collapse ' href='#'>
 			        <i class='icon-user'></i>
 			        <span>用户管理</span>
 			        <i class='icon-angle-down angle-down'></i>
 			    </a>
-			    <ul class='nav nav-stacked <%=active_menu(['users','weixin_users','qr_code'])%>'>
+			    <ul class='nav nav-stacked <%=active_menu(['users'])%>'>
 			        <li class=''>
-								<%=link_to "#" do%>
+								<%=link_to admin_users_path do%>
 								<i class='icon-caret-right'></i>
-                <span>系统管理用户列表</span>
+                <span>用户管理</span>
 								<%end%>
 			        </li>
 			

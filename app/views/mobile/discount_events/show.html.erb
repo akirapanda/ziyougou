@@ -72,7 +72,11 @@ header.bar{
 		<%if @event.is_public_event?%>
 			<%=image_tag @event.ticket_image_url%>
 			<br/>
-			<div ><i class="fa fa-download">下载到手机</i></div>
+			<div >
+				<%=link_to download_mobile_discount_event_path(@event), "data-ignore"=>"push",:target=>"_blank" do%>
+				<i class="fa fa-download">下载到手机</i>
+				<%end%>
+			</div>
 			<div ><i class="fa fa-book">添加至我的优惠券</i></div>
 		<%else%>
 		

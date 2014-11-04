@@ -1,0 +1,52 @@
+<%= content_for :title do %>
+	品牌基本信息
+<% end %>
+
+<%=render 'header_nav'%>
+<div class='box bordered-box blue-border'>
+
+  <div class='box-header blue-background'>
+	  <div class='title'>
+			<%=@seller.name%>
+		</div>
+	</div> <!-- /widget-header -->		
+	
+  <div class='box-content box-double-padding'>
+			<div class="row-fluid">
+				<div class="span4">
+					<%=image_tag @seller.logo_url(:small)%>
+					<br/>
+					<br/>
+					
+					<b>名称:</b>:
+					<p><%=@seller.name %> 
+					<b>门店数量:</b>:
+					<p><%=@seller.shops_count %> 
+					
+				
+					
+					<b>初次创建时间:</b>:
+					<p><%=l @seller.created_at %></p>
+					<b>最后编辑时间</b>:
+					<p><%=l @seller.updated_at %></p>
+				</div>
+				
+				<div class="span8">
+					<b>详细介绍</b>
+					<hr/>
+					<%=raw @seller.content%>
+				</div>	
+			</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-group pull-left">
+		<%=link_to "返回列表",admin_shops_path,:class=>"btn"%>
+	
+	</div>
+	<div class="btn-group pull-right">
+		<%=link_to "编辑",edit_admin_seller_path(@seller),:class=>"btn btn-primary"%>
+		<%=link_to "删除",[:admin,@seller],:method=>:delete,:class=>"btn btn-danger"%>
+	</div>
+</div>

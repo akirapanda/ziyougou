@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.integer  "user_id"
     t.string   "image"
     t.string   "code"
-    t.datetime "begin_at"
-    t.datetime "end_at"
+    t.date     "begin_at"
+    t.date     "end_at"
     t.string   "name"
     t.string   "passport_no"
     t.string   "gender"
@@ -51,11 +51,12 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.string   "intro"
     t.text     "content",              limit: 2147483647
     t.string   "event_type"
-    t.datetime "begin_at"
-    t.datetime "end_at"
+    t.date     "begin_at"
+    t.date     "end_at"
     t.datetime "publish_at"
     t.boolean  "is_visible",                              default: true
     t.integer  "discount_codes_count"
+    t.string   "ticket_image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,8 +75,9 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.string   "name"
     t.string   "logo"
     t.string   "intro"
-    t.text     "content",    limit: 2147483647
+    t.text     "content",     limit: 2147483647
     t.integer  "rate"
+    t.integer  "shops_count",                    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

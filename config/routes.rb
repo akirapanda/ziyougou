@@ -5,6 +5,14 @@ Ziyougou::Application.routes.draw do
 
   namespace :admin do
     root :to => 'home#index'
+    
+    resources :sellers do
+      member do 
+        get "shops"
+      end
+    end
+    
+    
     resources :shops do
       member do 
         get "discount_events"
@@ -17,6 +25,7 @@ Ziyougou::Application.routes.draw do
       end
     end
     resources :discount_codes
+    resources :users
   
   end
     
@@ -27,6 +36,7 @@ Ziyougou::Application.routes.draw do
     
     resources :shops
     resources :trip_guides
+    
     resources :recommend_events 
     
     
@@ -42,11 +52,12 @@ Ziyougou::Application.routes.draw do
     match '/signout',   to: 'sessions#destroy',       via: 'delete'
     match '/index',     to: 'home#index',             via: 'get'
     
-    
+
     resources :discount_codes
     resources :discount_events do
       member do
         get 'apply'
+        get 'download'
       end
     end
     

@@ -6,6 +6,10 @@ class  Admin::DiscountEventsController < Admin::BaseController
       @discount_codes_grid = initialize_grid(@discount_event.discount_codes,:per_page => 20)
     end
     
+    def show
+      
+    end
+    
     
     def index
       @q = DiscountEvent.search(params[:q])

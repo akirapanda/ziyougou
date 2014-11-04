@@ -1,0 +1,20 @@
+<%= grid(@sellers_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+	g.column :name => "LOGO	" ,:attribute => "logo"  do |seller|
+		link_to [:admin,seller] do
+			image_tag seller.logo_url(:small)
+		end
+	end
+	g.column :name => '名称', :attribute => 'name'  do |seller|
+		link_to seller.name,[:admin,seller]
+	end
+
+	g.column :name => "门店数量" ,:attribute => "shops_count"
+
+
+	g.column do |seller|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_seller_path(seller)
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,seller], method: :delete, data: { confirm: '确认删除品牌记录吗?' }
+		raw "#{edit} #{remove}"
+	end
+	
+end -%>

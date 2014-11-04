@@ -36,6 +36,7 @@ class CreateWeixin < ActiveRecord::Migration
       t.string :intro
       t.text :content, :limit => 4294967295
       t.integer :rate
+      t.integer :shops_count, :default => 0
       t.timestamps
     end
     
