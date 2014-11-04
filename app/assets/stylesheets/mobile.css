@@ -23,6 +23,7 @@ h1{
 }
 .content{
 	background: url('/images/black-bg.png') repeat; 
+	margin-bottom:50px;
 }
 .focus {
 	width:100%;
