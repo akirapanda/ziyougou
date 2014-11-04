@@ -25,6 +25,7 @@ module Ziyougou
     config.i18n.default_locale = :"zh-CN"
     config.time_zone = 'Beijing'
     config.active_record.default_timezone = :local
+    Rails.application.config.assets.precompile += %w( ckeditor/* )
     
     config.assets.precompile += %w(mobile.css mobile.js bootstrap.css bootstrap.js mobile_login.css mobile_login.js admin.js admin.css)    
     
