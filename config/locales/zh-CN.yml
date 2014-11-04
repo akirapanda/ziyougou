@@ -51,6 +51,14 @@
                 phone: "电话"
                 business_time: "营业时间"
                 traffic_info: "交通"
+            discount_event:
+                name: "优惠活动名称"
+                event_type: "活动类型"
+                shop_id: "活动门店"
+                begin_date: "开始日期"
+                end_date: "结束日期"
+                ticket_image: "优惠券图样"
+                is_visible: "用户可见状态"
             user:
                 email: "用户名"
                 password: "密码"
