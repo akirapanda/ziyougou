@@ -9,7 +9,18 @@
 	.media-object{
 		border-radius:10px;
 	}
+	
+
 </style>
+
+
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title">我的优惠券</h1>
+	</header>
+<% end %>
+
 
 <ul class="table-view">
 	<%@codes.each do |code|%>

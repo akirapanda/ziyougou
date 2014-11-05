@@ -30,6 +30,9 @@ gem 'simple_form'
 gem 'bootstrap_helper', github: 'akirapanda/bootstrap-helper'
 gem 'ckeditor'
 
+#state_machine
+gem 'aasm'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

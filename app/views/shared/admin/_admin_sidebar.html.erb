@@ -8,10 +8,10 @@
 					<%end%>
 			</li>
 
-			<li class="<%=active_side_link(['shops'])%>">
+			<li class="<%=active_side_link(['shops','seller'])%>">
 			    <a class='dropdown-collapse ' href='#'>
-			        <i class='icon-globe'></i>
-			        <span>商户</span>
+			        <i class='icon-building'></i>
+			        <span>商户管理</span>
 			        <i class='icon-angle-down angle-down'></i>
 			    </a>
 			    <ul class='nav nav-stacked <%=active_menu(['shops',"seller"])%>'>
@@ -30,7 +30,27 @@
 			    </ul>
 			</li>
 			
-		
+			<li class="<%=active_side_link(['shops'])%>">
+			    <a class='dropdown-collapse ' href='#'>
+			        <i class='icon-ticket'></i>
+			        <span>优惠活动管理</span>
+			        <i class='icon-angle-down angle-down'></i>
+			    </a>
+			    <ul class='nav nav-stacked <%=active_menu(['discount_event',"discount_code"])%>'>
+			        <li>
+								<%=link_to admin_discount_events_path do%>
+								<i class='icon-caret-right'></i>
+                <span>优惠活动管理</span>
+								<%end%>
+			        </li>
+			        <li>
+								<%=link_to admin_discount_codes_path do%>
+								<i class='icon-caret-right'></i>
+                <span>优惠券管理</span>
+								<%end%>
+			        </li>
+			    </ul>
+			</li>
 		
 			
 			<li class="<%=active_side_link(['users'])%>">

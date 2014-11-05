@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024152829) do
+ActiveRecord::Schema.define(version: 20141105082238) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -39,10 +39,13 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.string   "name"
     t.string   "passport_no"
     t.string   "gender"
-    t.datetime "leave_at"
+    t.date     "leave_at"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mobile"
+    t.string   "aasm_state"
+    t.datetime "canceled_at"
   end
 
   create_table "discount_events", force: true do |t|
@@ -90,9 +93,11 @@ ActiveRecord::Schema.define(version: 20141024152829) do
     t.string   "phone"
     t.string   "logo"
     t.integer  "seller_id"
-    t.text     "content",    limit: 2147483647
+    t.text     "content",       limit: 2147483647
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "business_time"
+    t.text     "traffic_info"
   end
 
   create_table "trip_guides", force: true do |t|

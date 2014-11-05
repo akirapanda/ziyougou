@@ -21,12 +21,12 @@
     <!--header class="bar bar-nav">
       <h1 class="title"></h1>
     </header-->
+    <%= yield :header %>
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
       <%= yield %>
     </div>
-    <%= yield :header %>
 
 		<nav class="bar bar-tab">
 			<%=link_to mobile_root_path, :class=>"tab-item","data-ignore"=>"push"  do%>

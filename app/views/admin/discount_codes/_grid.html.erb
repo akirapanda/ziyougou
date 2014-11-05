@@ -1,0 +1,33 @@
+<%= grid(@discount_codes_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+
+	g.column :name => '系统编号', :attribute => 'id'  do |code|
+		link_to code.id,[:admin,code]
+	end
+
+	g.column :name => "优惠活动名称" ,:attribute => "discount_event_id" do |code|
+		code.try(:discount_event).try(:name)
+	end
+
+	g.column :name => "申请用户账号" ,:attribute => "discount_event_id" do |code|
+		code.try(:user).try(:mobile)
+	end
+	
+	g.column :name => "申请用户姓名" ,:attribute => "name" 
+	
+	
+	g.column :name => "申请用户手机" ,:attribute => "mobile" 
+	
+	g.column :name => "状态" ,:attribute => "status" 
+	
+	g.column :name => "申请时间" ,:attribute => "created_at" do |code|
+		l code.created_at if code.created_at
+	end
+	
+	
+	g.column do |seller|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_seller_path(seller)
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,seller], method: :delete, data: { confirm: '确认删除品牌记录吗?' }
+		raw "#{edit} #{remove}"
+	end
+	
+end -%>

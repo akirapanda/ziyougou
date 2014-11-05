@@ -9,9 +9,7 @@
 	background:#F5F5F5;
 }
 
-header.bar{
-	background:#F5F5F5;
-}
+
   .intro,.detail{
 		padding-bottom:10px;
 		padding-top:20px;
@@ -42,7 +40,6 @@ header.bar{
 		color:red;
 	}
 	.download-bar div {
-		padding-left:30px;
 		display:inline;
 		margin-left: auto;
 		margin-right: auto;
@@ -76,7 +73,7 @@ header.bar{
 			<div ><i class="fa fa-book">添加至我的优惠券</i></div>
 		<%else%>
 			<%if has_applied(@event.id)%>
-					<div >已经申请</i></div>
+					<div >已经申请</div>
 			<%else%>
 				<%=link_to apply_mobile_discount_event_path(@event), :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
 					<div ><i class="fa fa-edit">预约申请</i></div>
