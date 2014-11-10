@@ -1,6 +1,14 @@
 class  Mobile::DiscountCodesController < Mobile::BaseController  
   
-
+  def show
+    @code = DiscountCode.find(params[:id])
+    @event = @code.discount_event 
+  end
+  
+  def detail
+    @code = DiscountCode.find(params[:id])
+  end
+  
   
   def new
     @code  = DiscountCode.new
@@ -19,6 +27,21 @@ class  Mobile::DiscountCodesController < Mobile::BaseController
       render 'new'
     end
   end
+  
+  
+  def edit
+    @code = DiscountCode.find(params[:id])
+  end
+  
+  def update
+    @code = DiscountCode.find(params[:id])
+    if @code.update(discount_code_params)
+      redirect_to detail_mobile_discount_code_path(@code),:notice=>"更新优惠券记录成功"
+    else
+      render 'edit'
+    end
+   end
+  
   
   private
   def discount_code_params

@@ -8,8 +8,8 @@ class DiscountCode < ActiveRecord::Base
   belongs_to :discount_event
   has_one :shop, :through => :discount_event
   has_one :seller, :through => :shop
-  
   belongs_to :user
+  validates :name,:mobile ,:out_fly_no , :in_fly_no ,:presence => true
   
   STATUS = ["新申请", "处理中", "已生效", "已失效", "已取消"]
   
@@ -26,7 +26,7 @@ class DiscountCode < ActiveRecord::Base
      end
      
      event :active do
-       transitions :from => :confirmed, 
+       transitions :from => [:new,:confirmed], 
                     :to => :actived,:on_transition => :active_code
      end
      

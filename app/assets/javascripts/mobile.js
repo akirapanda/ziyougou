@@ -20,3 +20,5 @@
 //= require mobile/mobiscroll.core-2.5.2-zh.js
 //= require mobile/mobiscroll.datetime-2.5.1.js
 //= require mobile/mobiscroll.datetime-2.5.1-zh.js
+//= require jquery.validate.js
+//= require additional-methods.min.js
