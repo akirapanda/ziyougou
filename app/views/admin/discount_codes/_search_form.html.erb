@@ -1,0 +1,57 @@
+<div class='accordion accordion-contrast' id='accordion'>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        筛选查询
+      </a>
+    </div>
+
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+				<div class="widget stacked ">
+					<div class="widget-content">
+						<%= search_form_for(@q,url: admin_discount_codes_path,:html=>{:class=>"form-horizontal"} ) do |f| %>
+						  <div class="control-group">
+						    <label class="control-label" for="inputEmail">优惠活动名称</label>
+						    <div class="controls">
+									<%=f.text_field :discount_event_name_cont%>
+						    </div>
+						  </div>
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">用户账号</label>
+						    <div class="controls">
+									<%=f.text_field :user_mobile_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">申请人姓名</label>
+						    <div class="controls">
+									<%=f.text_field :name_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">申请人手机</label>
+						    <div class="controls">
+									<%=f.text_field :mobile_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">申请状态</label>
+						    <div class="controls">
+									<%= f.select "status_eq", options_for_select(DiscountCode::STATUS),:include_blank=>true%>	
+								</div>
+						  </div>
+						<hr/>
+						  <%= f.submit "查询",:class=>"btn btn-block btn-primary" %>				  
+						<% end %>
+					</div>
+				</div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

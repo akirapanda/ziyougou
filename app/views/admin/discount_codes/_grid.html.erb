@@ -24,9 +24,9 @@
 	end
 	
 	
-	g.column do |seller|
-		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_seller_path(seller)
-		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,seller], method: :delete, data: { confirm: '确认删除品牌记录吗?' }
+	g.column do |code|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_discount_code_path(code)
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,code], method: :delete, data: { confirm: '确认删除优惠券申请记录吗?' }
 		raw "#{edit} #{remove}"
 	end
 	

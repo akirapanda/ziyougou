@@ -1,13 +1,17 @@
 class DiscountCode < ActiveRecord::Base
   include AASM
   
+  mount_uploader :image, TicketUploader
   
   before_save :update_status
   
   belongs_to :discount_event
   has_one :shop, :through => :discount_event
+  has_one :seller, :through => :shop
+  
   belongs_to :user
   
+  STATUS = ["新申请", "处理中", "已生效", "已失效", "已取消"]
   
   aasm do
      state :new, :initial => true
@@ -36,6 +40,23 @@ class DiscountCode < ActiveRecord::Base
        transitions :from => [:new,:confirmed,:actived,:inactived], 
                    :to => :canceled,:on_transition => :cancel_code
      end
+   end
+   
+   
+   def confirm_code
+     
+   end
+   
+   def active_code
+     
+   end
+   
+   def inactive_code
+     
+   end
+   
+   def cancel_code
+     
    end
    
    

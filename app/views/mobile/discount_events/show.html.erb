@@ -5,23 +5,22 @@
 	</header>
 <% end %>
 <style>
-.content{
-	background:#F5F5F5;
-}
-
+	.content{
+		background:#F5F5F5;
+	}
 
   .intro,.detail{
 		padding-bottom:10px;
 		padding-top:20px;
-		
 		padding-left:20px;
 		background-color:white;
 		border-bottom: 1px dashed #333333
 	}
 	
-	.intro{
-		padding-top:60px;
+	.detail{
+		padding-left:0px;
 	}
+	
 	.orange {
 		
 		color:orange;
@@ -32,7 +31,6 @@
 	}
 	
 	.download-bar {
-		padding-top:5px;
 		text-align: center;
 	}
 
@@ -66,10 +64,10 @@
 	<%=raw @event.content%>
 	
 	<div class="download-bar">
+		
+		
+		<%=render 'inner_code'%>
 		<%if @event.is_public_event?%>
-			<%=image_tag @event.ticket_image_url(:small)%>
-			<br/>
-
 			<div ><i class="fa fa-book">添加至我的优惠券</i></div>
 		<%else%>
 			<%if has_applied(@event.id)%>

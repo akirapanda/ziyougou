@@ -59,10 +59,20 @@
                 end_date: "结束日期"
                 ticket_image: "优惠券图样"
                 is_visible: "用户可见状态"
+            discount_code:
+                name: "姓名"
+                mobile: "手机"
+                passport_no: "护照号码"
+                hk_passport_no: "港澳通行证号码"
+                tw_passport_no: "入台证号码"
+                out_fly_no: "出发航班号"
+                in_fly_no: "回国航班号"
+                image: "优惠券图样"
+                
             user:
                 email: "用户名"
                 password: "密码"
-                new_password: "密码确认"
+                new_password: "密码"
                 
                 new_password_confirmation: "密码确认"
                 role: "权限"

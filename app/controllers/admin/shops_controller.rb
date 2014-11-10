@@ -46,7 +46,21 @@ class  Admin::ShopsController < Admin::BaseController
     def destroy
       @shop = Shop.find(params[:id]) 
       @shop.destroy
-      redirect_to admin_shops_path
+      
+       @seller = Seller.find(params[:id])
+
+      if @seller.shops.empty?
+        @seller.destroy
+        if back_path.include?("sellers/")
+          redirect_to shops_admin_seller_path(@seller) ,:notice=>"删除门店成功"
+        else
+          redirect_to back_path ,:notice=>"删除门店成功"
+        end
+      else
+        redirect_to back_path ,:alert=>"该门店下还有活动中的优惠活动,不可删除"
+      end
+
+      
     end
 
     private

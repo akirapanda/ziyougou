@@ -24,7 +24,16 @@ Ziyougou::Application.routes.draw do
         get "discount_codes"
       end
     end
-    resources :discount_codes
+    
+    resources :discount_codes do
+      member do
+        get "to_cancel"
+        get "to_active"
+        get "to_inactive"
+        get "to_confirm"
+        patch 'upload_code'
+      end
+    end
     resources :users
   
   end

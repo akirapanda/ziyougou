@@ -24,6 +24,16 @@
 		background-color:#F5F5F5;
 	}
 </style>
+
+
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title"><%=@shop.name%></h1>
+	</header>
+<% end %>
+
+
 <ul class="table-view">
 	<li class="table-view-cell">
 		<image src="/images/100_100.jpg" class="shop-logo pull-left">

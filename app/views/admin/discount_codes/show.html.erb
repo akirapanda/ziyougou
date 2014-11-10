@@ -1,0 +1,60 @@
+<%= content_for :title do %>
+	优惠券申请记录
+<% end %>
+
+<div class='box bordered-box blue-border'>
+  <div class='box-header blue-background'>
+	  <div class='title'>
+			<%=@discount_code.try(:discount_event).try(:name)%>
+		</div>
+	</div> <!-- /widget-header -->		
+	
+  <div class='box-content box-double-padding'>
+			<div class="row-fluid">
+				<div class="span4">
+					<%=image_tag @discount_code.seller.logo_url(:small) if @discount_code.seller%>
+					<br/>
+					<br/>
+					
+					<b>初次创建时间:</b>:
+					<p><%=l @discount_code.created_at %></p>
+					<b>最后编辑时间</b>:
+					<p><%=l @discount_code.updated_at %></p>
+				</div>
+				
+				<div class="span8">
+					
+						<b>品牌名称:</b><%= @discount_code.try(:seller).try(:name) %></br>
+						<b>门店名称:</b><%= @discount_code.try(:shop).try(:name) %></br>
+						<b>优惠活动名称:</b><%= @discount_code.try(:discount_event).try(:name) %></br>
+					
+						<b>申请人账号:</b><%= @discount_code.try(:user).try(:mobile) %></br>
+						<b>申请人手机:</b><%= @discount_code.mobile %></br>
+						<b>护照号码:</b><%= @discount_code.passport_no %></br>
+						<b>港澳通行证号码:</b><%= @discount_code.hk_passport_no %></br>
+						<b>入台证号码:</b><%= @discount_code.tw_passport_no %></br>
+						<b>出发航班号:</b><%= @discount_code.out_fly_no %></br>
+						<b>回国航班号:</b><%= @discount_code.in_fly_no %></br>
+						
+						
+						<b>当前状态:</b><%= @discount_code.status %></br>
+				</div>
+			</div>
+			<%=render 'operation_buttons' -%>
+	</div>
+</div>
+
+
+<div class="row-fluid">
+	<div class="btn-group pull-left">
+		<%=link_to "返回列表", admin_discount_codes_path,:class=>"btn"%>
+	
+	</div>
+	<div class="btn-group pull-right">
+
+		
+		<%=link_to "编辑",edit_admin_discount_code_path(@discount_code),:class=>"btn btn-primary"%>
+		<%=link_to "删除",[:admin,@discount_code],:method=>:delete,:class=>"btn btn-danger", data: { confirm: '确认删除优惠券申请记录吗?' }%>
+
+	</div>
+</div>

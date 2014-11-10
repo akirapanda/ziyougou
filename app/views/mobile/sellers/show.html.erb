@@ -1,26 +1,36 @@
 <style>
- .media-body{
-	 padding-top:10px;
-	 padding-left:10px;
+	.shop-title{
+		background-color:grey;
+		color:white;
+		margin-bottom:5px;
 	}
-	.media-body p{
-		margin-top:5px;
-	}
-	.media-object{
-		border-radius:10px;
+	.shop-detail p{
+		color:black;
 	}
 </style>
 
+
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title">门店列表</h1>
+	</header>
+<% end %>
+
+
 <ul class="table-view">
 	<%@shops.each do |shop|%>
-		<li class="table-view-cell media">
+		<li class="table-view-cell ">
 			<%=link_to [:mobile,shop], :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
-					<%=image_tag shop.logo_url ,:class=>"media-object pull-left"%>
-		      <div class="media-body">
-						<%=shop.name%>
-						<p>地址:<%=shop.address%></p>
-						<p>电话:<%=shop.phone%></p>
-		      </div>
+      <div class="">
+				<div class="shop-title">
+					<%=shop.name%>
+				</div>
+				<div class="shop-detail">
+					<p>地址:<%=shop.address%></p>
+					<p>电话:<%=shop.phone%></p>
+				</div>
+      </div>
 			<%end%>
 		</li>	
 	<%end%>

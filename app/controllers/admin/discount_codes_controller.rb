@@ -1,4 +1,37 @@
 class  Admin::DiscountCodesController < Admin::BaseController  
+
+    def to_cancel
+      @discount_code = DiscountCode.find(params[:id]) 
+      
+    end
+    
+    def to_active
+      @discount_code = DiscountCode.find(params[:id]) 
+      
+    end
+    
+    def to_inactive
+      @discount_code = DiscountCode.find(params[:id]) 
+      
+    end
+    
+    def to_confirm
+      @discount_code = DiscountCode.find(params[:id]) 
+      @discount_code.confirm
+      @discount_code.save
+      redirect_to [:admin,@discount_code], :notice=>"优惠券申请那个信息已被确认" 
+    end
+  
+    def upload_code
+      @discount_code = DiscountCode.find(params[:id]) 
+      @discount_code.active
+      if @discount_code.update(discount_code_params)
+        redirect_to [:admin,@discount_code], :notice=>"激活优惠券成功"
+      else
+        render 'to_active'
+      end
+    end
+  
   
     def index
       @q = DiscountCode.search(params[:q])
@@ -15,35 +48,35 @@ class  Admin::DiscountCodesController < Admin::BaseController
     end
 
     def create
-      @discount_event = DiscountEvent.new(discount_event_params) 
+      @discount_event = DiscountCode.new(discount_event_params) 
       if @discount_event.save
-        redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"新建商户优惠活动成功!"
+        redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"新建优惠券记录成功!"
       else
         render 'new'
       end
     end
 
     def edit
-      @discount_event = DiscountEvent.find(params[:id]) 
+      @discount_code = DiscountCode.find(params[:id]) 
     end
 
     def update
-      @discount_event = DiscountEvent.find(params[:id]) 
-      if @discount_event.update(discount_event_params)
-        redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"更新商户优惠活动成功"
+      @discount_code = DiscountCode.find(params[:id]) 
+      if @discount_code.update(discount_code_params)
+        redirect_to [:admin,@discount_code],:notice=>"更新优惠券记录成功"
       else
         render 'edit'
       end
     end
 
     def destroy
-      @discount_event = DiscountEvent.find(params[:id]) 
+      @discount_event = DiscountCode.find(params[:id]) 
       @discount_event.destroy
       redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"删除商户优惠活动成功"
     end
 
     private
-    def discount_event_params
-      params.require(:discount_event).permit!
+    def discount_code_params
+      params.require(:discount_code).permit!
     end
 end

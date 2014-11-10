@@ -1,0 +1,36 @@
+<%= content_for :title do %>
+	激活用户优惠券
+<% end %>
+
+<div class='row-fluid'>
+	<div class='box bordered-box blue-border'>
+		<%=render 'shared/error_messages',:target=>@discount_code%>
+
+		<%=simple_form_for([:admin,@discount_code],:url=>upload_code_admin_discount_code_path(@discount_code),:html=>{:class=>"form-horizontal"}) do |f|%>
+		
+			<%= f.input :image,:input_html=>{:class=>"input-xxlarge"}%>
+		
+			<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
+			<%= f.input :mobile,:input_html=>{:class=>"input-xxlarge"}%>
+			<%= f.input :passport_no,:input_html=>{:class=>"input-xxlarge"}%>
+			
+			
+			
+			<div class="control-group date optional discount_event_begin_at">
+				<label class="date optional control-label" for="discount_event_begin_at_1i">有效期限(无限定请留空)</label>
+				<div class="controls">
+					<%= f.date_field :begin_at,:input_html=>{:class=>"input-xxlarge"}%>	 ~ 
+					<%= f.date_field :end_at,:input_html=>{:class=>"input-xxlarge"}%>
+				</div>
+			</div>
+
+
+
+
+
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary">保存</button> 
+			</div> 
+		<%end%>
+	</div>
+</div>

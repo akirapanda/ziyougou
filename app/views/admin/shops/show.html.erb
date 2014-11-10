@@ -1,5 +1,5 @@
 <%= content_for :title do %>
-	商户详细信息
+	门店详细信息
 <% end %>
 
 <%=render 'header_nav'%>
@@ -21,7 +21,7 @@
 					<b>品牌</b>
 					<p><%=link_to @shop.seller.name,[:admin,@shop.seller] if @shop.seller%></p>
 					<b>国家/地区:</b>:
-					<p><%=@shop.nation %> / <%=@shop.area%></p>
+					<p><%=@shop.try(:nation).try(:name) %> / <%=@shop.area%></p>
 					
 					<b>电话:</b>:
 					<p><%=@shop.phone %></p>

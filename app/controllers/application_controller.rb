@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   include UserHelper
   include DiscountHelper
   
+  
+  def back_path
+     request.env["HTTP_REFERER"].blank? ? "/" : request.env["HTTP_REFERER"]
+  end
 end

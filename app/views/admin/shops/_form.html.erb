@@ -6,12 +6,20 @@
 	<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
 	<%= f.input :logo%>
 	
-	<%= f.input :nation,:input_html=>{:class=>"input-xxlarge"}%>	
+	<%= f.input :nation,:collection=>Nation.all,:value_method=>:id, :label_method=>:name,:inluce_blank=>false,:input_html=>{:class=>"input-xxlarge"}%>	
 	<%= f.input :area,:input_html=>{:class=>"input-xxlarge"}%>		
 	<%= f.input :address,:input_html=>{:class=>"input-xxlarge"}%>		
 	
 	<%= f.input :phone,:input_html=>{:class=>"input-xxlarge"}%>		
-	<%= f.cktext_area :content,:input_html=>{:class=>"form-control"}, :ckeditor => { :height => 500 }%>
+	
+	<div class="control-group tel optional shop_content">
+		<label class="tel optional control-label" for="shop_content">详细介绍</label>
+		<div class="controls">
+			<%= f.cktext_area :content,:input_html=>{:class=>"form-control"}, :ckeditor => { :height => 500 }%>
+		</div>
+	</div>	
+	
+	
 	
 	<div class="form-actions">
 		<button type="submit" class="btn btn-primary">保存</button> 

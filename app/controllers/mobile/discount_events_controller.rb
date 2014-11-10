@@ -8,7 +8,6 @@ class  Mobile::DiscountEventsController < Mobile::BaseController
   def download
     @event = DiscountEvent.find(params[:id])
 
-    
   end
   
   def apply

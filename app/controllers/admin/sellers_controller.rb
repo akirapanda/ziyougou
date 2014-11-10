@@ -44,6 +44,22 @@ class  Admin::SellersController < Admin::BaseController
     end
   end
   
+  
+  def destroy
+    @seller = Seller.find(params[:id])
+    
+   if @seller.shops.empty?
+     @seller.destroy
+     if back_path.include?("sellers/")
+       redirect_to admin_sellers_path ,:notice=>"删除品牌成功"
+     else
+       redirect_to back_path ,:notice=>"删除品牌成功"
+     end
+   else
+     redirect_to back_path ,:alert=>"该品牌下还有门店信息,不可删除"
+   end
+  end
+  
   private
   def seller_params
     params.require(:seller).permit!

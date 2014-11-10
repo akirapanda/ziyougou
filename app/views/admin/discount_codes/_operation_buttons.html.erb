@@ -1,0 +1,29 @@
+<div class="row-fluid">
+	<div class="btn-group pull-right">
+		<%if @discount_code.may_cancel? %>
+			<%=link_to "取消申请",to_cancel_admin_discount_code_path(@discount_code),:class=>"btn btn-danger"%>
+		<%end%>
+		
+		<%if @discount_code.may_inactive? %>
+			<%=link_to "失效申请",to_inactive_admin_discount_code_path(@discount_code),:class=>"btn btn"%>
+		<%end%>
+		
+		
+		<%if @discount_code.may_confirm? %>
+			<%=link_to "确认申请",to_confirm_admin_discount_code_path(@discount_code),:class=>"btn btn-primary"%>
+		<%end%>
+
+		<%if @discount_code.may_active? %>
+			<%=link_to "激活申请",to_active_admin_discount_code_path(@discount_code),:class=>"btn btn-primary"%>
+		<%end%>
+		
+
+		
+
+	</div>
+
+</div>
+
+
+
+

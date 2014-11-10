@@ -21,45 +21,10 @@
 		padding:0px 0px 0px 0px;
 		width: 100px;
 	}
-</style>
-<style>
-
-.content{
-	background-color:#F7F7F7;
-	margin-bottom:50px;
-}
-
-.images-content{
-	position: absolute;
-	z-index: 1;
-	left: 0px;
-	bottom:5px;
-	width: 100%;
-	color: #fff;
-	background: rgba(0,0,0,.7);
-	height: 30px;
-	line-height: 30px; 
-	overflow: hidden;
-	width:101px;
 	
-}
-
-.images-wrapper{
-	min-height:100px;
-	position:relative;
-}
-.pad{
-	padding-left:30px;
-}
-
-.no_pad{
-	padding:0px;
-}
-
-.thumb{
-	width:100px;
-}
+	
 </style>
+
 
 <script>
 $(document).ready(function(){
@@ -84,10 +49,10 @@ $(document).ready(function(){
 		<%=link_to [:mobile,seller] ,"data-ignore"=>"push" do%>
 		
 			<div class="seller images-wrapper">
+				<%=image_tag seller.try(:nation).try(:flag_image)%> <%=seller.name%> 
+				
 				<%=image_tag seller.logo_url(:small)%>
-				<div class="images-content pad">
-				<%=seller.name%>
-				</div>
+
 			</div>
 			<%end%>
 			

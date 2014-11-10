@@ -7,16 +7,13 @@
         <div class="register span12">
 
 					<%= form_for(:session, url: mobile_sessions_path ,:html=>{:class=>"input-group"}) do |f| %>
-					 <h3>登陆 <span class="red"><strong>自由购物帮</strong></span></h3>
+					 	<h3> <span class="red"><strong>自由购物帮</strong></span></h3>
           	<label for="firstname">手机号</label>
 					 	<%=f.text_field :mobile,:placeholder=>"手机号"%>
 				    <label for="password">密码</label>
 					  <%=f.password_field :password,:placeholder=>"密码"%>
-
-
 						
 						<button class="btn btn-primary ">登陆</button>
-
 
 					<%end%>
 	

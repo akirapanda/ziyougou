@@ -1,7 +1,7 @@
 
 
 <%= content_for :title do %>
-	商家优惠活动列表
+	门店优惠活动列表
 <% end %>
 
 
@@ -22,7 +22,7 @@
 					<br/>
 					
 					<b>国家/地区:</b>:
-					<p><%=@shop.nation %> / <%=@shop.area%></p>
+					<p><%=@shop.try(:nation).try(:name) %> / <%=@shop.area%></p>
 					
 					<b>电话:</b>:
 					<p><%=@shop.phone %></p>
@@ -36,6 +36,7 @@
 				</div>
 				
 				<div class="span8">
+					<h4>商户优惠活动列表</h4>
 					<%=render "admin/discount_events/grid"%>
 				</div>	
 			</div>
@@ -45,7 +46,7 @@
 
 
 
-<div class="row">
+<div class="row-fluid">
 	<div class="btn-group pull-left">
 		<%=link_to "返回列表",admin_shops_path,:class=>"btn"%>
 	

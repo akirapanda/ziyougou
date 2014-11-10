@@ -1,0 +1,6 @@
+<%if @event.is_public_event?%>
+	<%=image_tag @event.ticket_image_url(:small)%>
+<%else%>
+	<%@code = exist_code(@event)%>
+	<%=image_tag @code.image_url(:small) if @code%>
+<%end%>

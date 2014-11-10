@@ -2,14 +2,15 @@
 	g.column :name => '系统ID', :attribute => 'id'  do |event|
 		link_to event.id,[:admin,event]
 	end
-
+	g.column :name => "门店名称", :attribute => 'shop_id'  do |event|
+		link_to event.try(:shop).try(:name), [:admin,event.shop] if event.shop
+	end
+	
 	g.column :name => '活动名称', :attribute => 'name'  do |event|
 		link_to event.name,[:admin,event]
 	end
 
-	g.column :name => "商户名称", :attribute => 'shop_id'  do |event|
-		link_to event.try(:shop).try(:name), [:admin,event.shop] if event.shop
-	end
+
 	g.column :name => '类型', :attribute => 'event_type'  
 	
 	g.column :name => "有效期(起)" ,:attribute => "begin_at" do |event|
