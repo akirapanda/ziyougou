@@ -28,7 +28,7 @@
 	.seller_body a:visited{
 		color:white;
 	}
-	.seller img{
+	.seller_logo{
 		height:100px;
 	  line-height:100px;
 		vertical-align:middle;
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			<div class="seller">
 				<%=image_tag seller.try(:nation).try(:flag_image)%> <%=seller.name%> 
 				
-				<%=image_tag seller.logo_url(:small)%>
+				<%=image_tag seller.logo_url(:small),:class=>"seller_logo"%>
 
 			</div>
 			<%end%>
