@@ -6,7 +6,7 @@
 	<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
 	<%= f.input :logo%>
 	
-	<%= f.input :nation,:collection=>Nation.all,:value_method=>:id, :label_method=>:name,:inluce_blank=>false,:input_html=>{:class=>"input-xxlarge"}%>	
+	<%= f.input :nation_id,:collection=>Nation.all,:value_method=>:id, :label_method=>:name,:inluce_blank=>false,:input_html=>{:class=>"input-xxlarge"}%>	
 	<%= f.input :area,:input_html=>{:class=>"input-xxlarge"}%>		
 	<%= f.input :address,:input_html=>{:class=>"input-xxlarge"}%>		
 	

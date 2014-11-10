@@ -16,14 +16,10 @@
 				<div class="span4">
 					<%=image_tag @seller.logo_url(:small)%>
 					<br/>
-					<br/>
-					
 					<b>名称:</b>:
-					<p><%=@seller.name %> 
+					<p><%=@seller.name %> </p>
 					<b>门店数量:</b>:
-					<p><%=@seller.shops_count %> 
-					
-				
+					<p><%=@seller.shops_count %></p>
 					
 					<b>初次创建时间:</b>:
 					<p><%=l @seller.created_at %></p>
@@ -42,7 +38,7 @@
 
 <div class="row">
 	<div class="btn-group pull-left">
-		<%=link_to "返回列表",admin_shops_path,:class=>"btn"%>
+		<%=link_to "返回列表",admin_sellers_path,:class=>"btn"%>
 	
 	</div>
 	<div class="btn-group pull-right">
