@@ -13,20 +13,10 @@
 			<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
 			<%= f.input :mobile,:input_html=>{:class=>"input-xxlarge"}%>
 			<%= f.input :passport_no,:input_html=>{:class=>"input-xxlarge"}%>
-			
-			
-			
-			<div class="control-group date optional discount_event_begin_at">
-				<label class="date optional control-label" for="discount_event_begin_at_1i">有效期限(无限定请留空)</label>
-				<div class="controls">
-					<%= f.date_field :begin_at,:input_html=>{:class=>"input-xxlarge"}%>	 ~ 
-					<%= f.date_field :end_at,:input_html=>{:class=>"input-xxlarge"}%>
-				</div>
-			</div>
-
-
-
-
+			<%= f.input :hk_passport_no,:input_html=>{:class=>"input-xxlarge"}%>
+			<%= f.input :tw_passport_no,:input_html=>{:class=>"input-xxlarge"}%>
+			<%= f.input :out_fly_no,:input_html=>{:class=>"input-xxlarge"}%>
+			<%= f.input :in_fly_no,:input_html=>{:class=>"input-xxlarge"}%>
 
 			<div class="form-actions">
 				<button type="submit" class="btn btn-primary">保存</button> 
