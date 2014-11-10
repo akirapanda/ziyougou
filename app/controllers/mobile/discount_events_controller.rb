@@ -25,10 +25,6 @@ class  Mobile::DiscountEventsController < Mobile::BaseController
        return
      end
      
-
-     
-     
-     
      @code = DiscountCode.new
      @code.user =  current_user
      @code.discount_event  = @event
