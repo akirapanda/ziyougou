@@ -17,7 +17,7 @@ module DiscountHelper
     if current_user.nil?
        return nil
      end
-     @exist_code = DiscountCode.where("user_id = ? and discount_event_id = ?", current_user.id, discount_event_id)
+     @exist_code = DiscountCode.where("user_id = ? and discount_event_id = ?", current_user.id, discount_event_id).first
   end
   
 end

@@ -10,7 +10,6 @@
 	}
 	
 	#sellers{
-		margin-top:20px;
 		padding-left:20px;
 		
 	}
@@ -22,7 +21,13 @@
 		width: 100px;
 	}
 	
+	.seller_body a, .seller_body a:hover, .seller_body a:link{
+		color:white;
+	}
 	
+	seller_body a:visited{
+		color:white;
+	}
 </style>
 
 
@@ -36,19 +41,23 @@ $(document).ready(function(){
 
 </script>
 
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title"><i class="fa fa-fire"></i>
+		推荐商户</h1>
+	</header>
+<% end %>
+
 
 <div class="seller_list">
-	<div class="seller_title">
-	
-		<h3><i class="fa fa-fire"></i>
-		推荐商户</h3>
-	</div>
+
 	
 	<div id="sellers" class="seller_body">
 		<%@sellers.each do |seller|%>
 		<%=link_to [:mobile,seller] ,"data-ignore"=>"push" do%>
 		
-			<div class="seller images-wrapper">
+			<div class="seller">
 				<%=image_tag seller.try(:nation).try(:flag_image)%> <%=seller.name%> 
 				
 				<%=image_tag seller.logo_url(:small)%>

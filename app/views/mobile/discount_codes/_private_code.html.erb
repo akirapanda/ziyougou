@@ -1,0 +1,9 @@
+
+<%=image_tag @code.image_url(:small) %> 
+
+
+<%=link_to detail_mobile_discount_code_path(@code), :class=>"btn btn-block navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+	<p>当前状态:<%=@code.status%></p>
+<%end%>
+	
+

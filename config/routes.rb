@@ -62,7 +62,11 @@ Ziyougou::Application.routes.draw do
     match '/index',     to: 'home#index',             via: 'get'
     
 
-    resources :discount_codes
+    resources :discount_codes do
+      member do
+        get 'detail'
+      end
+    end
     resources :discount_events do
       member do
         get 'apply'

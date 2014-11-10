@@ -1,0 +1,43 @@
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a> 
+	  <h1 class="title">申请人详细信息</h1>
+	</header>
+<% end %>
+
+
+
+<ul class="table-view">
+	
+	<li class="table-view-cell">
+		<p>申请状态:<%=@code.status%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>申请人姓名:<%=@code.name%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>申请人手机:<%=@code.mobile%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>护照号码:<%=@code.passport_no%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>港澳通行证号码:<%=@code.hk_passport_no%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>入台证号码:<%=@code.tw_passport_no%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>出发航班号:<%=@code.out_fly_no%></p>
+  </li>
+  <li class="table-view-cell">
+		<p>回国航班号:<%=@code.in_fly_no%></p>
+  </li>
+</ul>
+
+<%= link_to edit_mobile_discount_code_path(@code),:class=>"btn btn-block btn-primary","data-ignore"=>"push" do%>
+ 	修改申请信息
+<%end%>
+<%= link_to mobile_discount_code_path(@code),:class=>"btn btn-block","data-ignore"=>"push" do%>
+ 	返回
+<%end%>
