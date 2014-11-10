@@ -31,6 +31,10 @@
 					<b>活动有效期限:</b>
 					<p><%=l @discount_event.begin_at if  @discount_event.begin_at%>  ~ 
 						<%=l @discount_event.end_at  if  @discount_event.end_at %></p>
+						
+					<%=image_tag @discount_event.ticket_image_url(:small) if @discount_event.ticket_image%>
+						
+					
 				</div>	
 			</div>
 	</div>
