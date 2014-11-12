@@ -105,6 +105,8 @@ WeixinRailsMiddleware::WeixinController.class_eval do
 
       # 点击菜单拉取消息时的事件推送
       def reply_click_event
+        Rails.logger.info("点击了: #{@keyword}")
+        
         if @keyword == "BUTTON_1_2"
           @recommend_events = RecommendEvent.all.order("id desc").limit(10)
           
