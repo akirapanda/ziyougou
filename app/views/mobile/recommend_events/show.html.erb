@@ -1,0 +1,25 @@
+<style>
+.content{
+	background: white; 
+}
+</style>
+
+<%= content_for :header do %>
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <h1 class="title"><i class="fa fa-thumbs-o-up"></i> <%=@recommend_event.title%></h1>
+	</header>
+<% end %>
+
+
+<ul class="table-view">
+  <li class="table-view-cell ">
+		<h4><%=@recommend_event.title%></h4>
+	
+			<p> 发布于<%= l @recommend_event.created_at%></p>
+  </li>
+</ul>
+
+<div class="content-padded">
+	<%=raw @recommend_event.content%>
+</div>

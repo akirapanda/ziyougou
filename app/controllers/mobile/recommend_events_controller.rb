@@ -1,6 +1,6 @@
 class  Mobile::RecommendEventsController < Mobile::BaseController  
   def index
-    @recommend_events = RecommendEvent.all
+    @recommend_events = RecommendEvent.all.order("id desc")
   end
   
   
