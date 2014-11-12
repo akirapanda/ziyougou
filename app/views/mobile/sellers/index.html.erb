@@ -1,55 +1,35 @@
 <style>
-.content{
-	background: url('/images/black-bg.png') repeat; 
-}
-
- h3{
-	color:white;
-	}
-	
-	.seller_title,seller_body{
-		padding-top:20px;
-		
-		padding-left:50px;
-	}
-	
-	#sellers{
-		padding-left:20px;
-		
-	}
-	
 	.seller{
-		margin-left:10px;
-		margin-top:20px;
-		padding:0px 0px 0px 0px;
-		width: 150px;
+		width: 100%;
 	}
 	
 	.seller_body a, .seller_body a:hover, .seller_body a:link{
-		color:white;
+		color:black;
 	}
 	
 	.seller_body a:visited{
-		color:white;
+		color:black;
+	}
+	
+	.sell-content{
+		padding-top:5px;
+		padding-bottom:5px;
+		
+		padding-left:30px;
+		background-color:#F5F5F5;
 	}
 	.seller_logo{
-	  line-height:100px;
+		width:100%;
 		vertical-align:middle;
 	
 	}
-	
+	.table-view-cell{
+		padding:0px 0px 0px 0px;
+	}
 </style>
 
 
-<script>
-$(document).ready(function(){
-	$('#sellers').isotope({  
-	  itemSelector : '.seller'
-	});
-	
-});
 
-</script>
 
 <%= content_for :header do %>
 	<header class="bar bar-nav">
@@ -59,25 +39,32 @@ $(document).ready(function(){
 	</header>
 <% end %>
 
-
-<div class="seller_list">
-
+<ul class="table-view seller_body">
+	<%@sellers.each do |seller|%>
+  <li class="table-view-cell ">
 	
-	<div id="sellers" class="seller_body">
-		<%@sellers.each do |seller|%>
-		<%=link_to [:mobile,seller] ,"data-ignore"=>"push" do%>
-		
-			<div class="seller">
-				<%=image_tag seller.try(:nation).try(:flag_image)%> <%=seller.name%> 
-				
-				<%=image_tag seller.logo_url(:small),:class=>"seller_logo"%>
-
-			</div>
-			<%end%>
+		<div class="seller ">
+			<%=link_to [:mobile,seller] ,"data-ignore"=>"push", :class=>"navigate-right" do%>	
 			
-		<%end%>
+			<div class="sell-logo">
+					<%=image_tag seller.logo_url(:normal),:class=>"seller_logo"%>
+			</div>
+			
+				<div class="sell-content ">
+						<h4><%=seller.name%></p>
+						<p><%=truncate seller.intro ,:length=>20%> </p>
+				</div>
+			<%end%>
+		</div>
+	</li>
 		
-	</div>
+
+		
+	<%end%>
+</ul>
+
+
 	
-</div>
+
+
 

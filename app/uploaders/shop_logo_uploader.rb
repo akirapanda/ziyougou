@@ -5,8 +5,10 @@ class ShopLogoUploader < CarrierWave::Uploader::Base
 
   storage :file
   # storage :fog
+  
+
   version :normal do
-    process :resize_to_fit => [256, 256]
+    process :resize_to_fit => [320, nil]
   end
 
   version :small do
@@ -21,7 +23,7 @@ class ShopLogoUploader < CarrierWave::Uploader::Base
   end
   
   def default_url
-    "default_shop_logo.jpg"
+    "320_200.jpg"
   end
 
 end

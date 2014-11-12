@@ -42,6 +42,7 @@
                 nation_id: "国家"
                 content: "详细介绍"
                 shops_count: "门店数量"
+                intro: "简介"
             shop:
                 seller_id: "属于品牌"
                 name: "门店名称"

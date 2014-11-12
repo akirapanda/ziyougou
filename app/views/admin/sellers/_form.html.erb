@@ -6,6 +6,7 @@
 	<%= f.input :nation_id,:collection=>Nation.all,:value_method=>:id, :label_method=>:name,:inluce_blank=>false,:input_html=>{:class=>"input-xxlarge"}%>	
 	
 	
+	<%= f.input :intro,:input_html=>{:class=>"input-xxlarge"}%>
 	
 	<div class="control-group string required seller_name">
 		<%=f.label :content%>
