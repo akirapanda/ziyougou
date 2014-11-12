@@ -15,6 +15,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
   end
   
   
+  
   private
 
     def response_text_message(options={})
@@ -125,9 +126,17 @@ WeixinRailsMiddleware::WeixinController.class_eval do
             return ""
           end
           
+        elsif @keyword == "BUTTON_2_1"
+          @setting = Setting.where(:key=>"BANGZHUJIESHAO")        
+          if @setting.first
+            reply_text_message(@setting.value)
+          else
+            return ""
+          end
+        else
+          return ""
         end
         
-        return ""
       end
 
       # 点击菜单跳转链接时的事件推送

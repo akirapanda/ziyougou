@@ -86,3 +86,7 @@
                 email: "邮件地址"
                 password: "密码"
                 password_confirmation: "确认密码"
+            setting:
+                name: "参数名"
+                key: "参数代码"
+                value: "参数值"
