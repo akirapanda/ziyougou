@@ -119,7 +119,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
             arts << art
           end
 
-          if @art.any?
+          if arts.any?
            return reply_news_message(arts)
           else
             return ""
