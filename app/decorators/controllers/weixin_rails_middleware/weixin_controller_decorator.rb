@@ -114,7 +114,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
           @recommend_events.each do |event|
             cover_url = event.cover.nil? ? "" : "#{server_path}#{event.cover_url}"
             link_url = mobile_recommend_event_url(event)
-
+            logger.debug("link is #{link_url} and  cover is #{cover_url}")
             art = generate_article("#{event.title}", "#{event.brief}", "#{cover_url}",link_url)
             arts << art
           end
