@@ -1,0 +1,18 @@
+<%= grid(@admin_users_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+	g.column :name => '系统ID', :attribute => 'id'  do |user|
+		link_to user.id,[:admin,user]
+	end
+	g.column :name => 'email', :attribute => 'email' 
+
+
+	g.column do |user|
+		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_admin_user_path(user)
+		
+		password =  link_to raw("<button class=\"btn btn-mini btn-primary\"><i class=\"icon-refresh bigger-120\"></i></button>"), edit_password_admin_admin_user_path(user)
+				
+				
+		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,user], method: :delete, data: { confirm: '确认删除管理员账户吗?' }
+		raw "#{edit} #{password} #{remove}"
+	end
+	
+end -%>

@@ -91,13 +91,19 @@
 			        
 			    </ul>
 			</li>
-			<li>
+			<li class="<%=active_side_link(['admin_users'])%>">
 			    <a class='dropdown-collapse ' href='#'>
 			        <i class='icon-cog'></i>
 			        <span>系统设置</span>
 			        <i class='icon-angle-down angle-down'></i>
 			    </a>
 			    <ul class='nav nav-stacked'>
+				    <li class=''>
+							<%=link_to admin_admin_users_path do%>
+		                <i class='icon-caret-right'></i>
+		                <span>系统管理员设置</span>
+							<%end%>
+		        </li>
 			        <li class=''>
 			            <a href='#'>
 			                <i class='icon-caret-right'></i>

@@ -1,7 +1,9 @@
 require 'digest/md5' 
 
 class User < ActiveRecord::Base
-  attr_accessor :current_password,:new_password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   
   
   validates :mobile, uniqueness: true

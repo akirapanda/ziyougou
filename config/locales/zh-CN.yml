@@ -81,3 +81,8 @@
                 new_password_confirmation: "密码确认"
                 role: "权限"
                 mobile: "手机号"
+                
+            admin_user:
+                email: "邮件地址"
+                password: "密码"
+                password_confirmation: "确认密码"

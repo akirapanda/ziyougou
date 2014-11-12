@@ -36,6 +36,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    bcrypt (3.1.9)
     builder (3.1.4)
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
@@ -50,6 +51,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -151,6 +158,8 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     weixin_rails_middleware (1.2.3)
       multi_xml (>= 0.5.2)
       nokogiri (>= 1.6.1)
@@ -171,6 +180,7 @@ DEPENDENCIES
   carrierwave (= 0.6.2)
   ckeditor
   coffee-rails (~> 4.0.0)
+  devise
   execjs
   jbuilder (~> 1.2)
   jquery-rails

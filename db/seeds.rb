@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+AdminUser.create(:email=>"admin@newnil.com",:password=>"Qwer1234")
 @babaiban = Seller.create(:name=>"八佰伴")
 @laiyifen = Seller.create(:name=>"来一份")
 
@@ -20,7 +21,6 @@ Shop.create(nation_id: @japan.id, area: "东京", name: "八佰伴大阪店",:ad
 Shop.create(nation_id: @japan.id, area: "东京", name: "来一份东京店",:address=>"东京市东海区123号",:phone=>"2222222",:seller_id=>@laiyifen.id)
 
 DiscountEvent.create(shop_id: @shop.id, name: "测试公开活动",:event_type=>"公开",:intro=>"测试的介绍文本")
-
 
 
 

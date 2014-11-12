@@ -1,4 +1,5 @@
 Ziyougou::Application.routes.draw do
+  devise_for :admin_users
   mount Ckeditor::Engine => '/ckeditor'
   mount WeixinRailsMiddleware::Engine, at: "/"
 
@@ -14,6 +15,12 @@ Ziyougou::Application.routes.draw do
     
     resources :recommend_events
     resources :wx_keywords
+    resources :admin_users do
+      member do
+        get 'edit_password'
+        patch 'update_password'
+      end
+    end
     
     resources :shops do
       member do 

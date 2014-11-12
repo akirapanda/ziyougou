@@ -1,0 +1,20 @@
+<%= content_for :title do %>
+	系统管理员设置
+<% end %>
+
+
+<div class='box bordered-box blue-border'>
+	<div class='box-header fb-background'>
+	    <div class='title'>商户优惠活动列表</div>
+	    <div class='actions'>
+
+				<%=link_to new_admin_admin_user_path ,:class=>"btn  btn-mini btn-link" do%>
+					<i class='icon-plus'>新建</i>
+				<%end%>
+	    </div>
+	</div>
+	<div class='box-content box-no-padding'>
+		<%=render 'grid'%>
+	</div>
+</div>
+
