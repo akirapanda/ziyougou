@@ -69,7 +69,10 @@
                 out_fly_no: "出发航班号"
                 in_fly_no: "回国航班号"
                 image: "优惠券图样"
-                
+            recommend_event:
+                title: "标题"
+                brief: "简介"
+                cover: "封面图"
             user:
                 email: "用户名"
                 password: "密码"

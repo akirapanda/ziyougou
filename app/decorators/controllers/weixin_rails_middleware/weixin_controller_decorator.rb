@@ -8,6 +8,12 @@ WeixinRailsMiddleware::WeixinController.class_eval do
     render xml: send("response_#{@weixin_message.MsgType}_message", {})
   end
 
+
+  def server_path
+    "http://ziyougou.newnil.net"
+  end
+  
+  
   private
 
     def response_text_message(options={})
@@ -98,7 +104,26 @@ WeixinRailsMiddleware::WeixinController.class_eval do
 
       # 点击菜单拉取消息时的事件推送
       def reply_click_event
-        reply_text_message("你点击了: #{@keyword}")
+        if @keyword == "BUTTON_1_2"
+          @recommend_events = RecommendEvent.all.order("id desc").limit(10)
+          
+          arts = []
+          @recommend_events.each do |event|
+            cover_url = event.cover.nil? ? "" : "#{server_path}#{event.cover_url(:normal)}"
+            link_url = mobile_recommend_event_url(article)
+
+            art = generate_article("#{event.title}", "#{event.breif}", "#{cover_url}",link_url)
+            arts << art
+          end
+
+          if @art.any?
+            reply_news_message(arts)
+          else
+            ""
+          end
+        end
+        
+        ""
       end
 
       # 点击菜单跳转链接时的事件推送

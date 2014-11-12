@@ -52,6 +52,27 @@
 			    </ul>
 			</li>
 		
+			<li class="<%=active_side_link(['recommend_event'])%>">
+			    <a class='dropdown-collapse ' href='#'>
+			        <i class='icon-edit '></i>
+			        <span>资讯管理</span>
+			        <i class='icon-angle-down angle-down'></i>
+			    </a>
+			    <ul class='nav nav-stacked <%=active_menu(['discount_event',"discount_code"])%>'>
+			        <li>
+								<%=link_to admin_recommend_events_path do%>
+								<i class='icon-caret-right'></i>
+                <span>帮主推荐</span>
+								<%end%>
+			        </li>
+			        <li>
+								<%=link_to admin_wx_keywords_path do%>
+								<i class='icon-caret-right'></i>
+                <span>微信关键字</span>
+								<%end%>
+			        </li>
+			    </ul>
+			</li>
 			
 			<li class="<%=active_side_link(['users'])%>">
 			    <a class='dropdown-collapse ' href='#'>

@@ -12,6 +12,8 @@ Ziyougou::Application.routes.draw do
       end
     end
     
+    resources :recommend_events
+    resources :wx_keywords
     
     resources :shops do
       member do 
