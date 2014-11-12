@@ -11,7 +11,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
 
 
   def server_path
-    "http://ziyougou.newnil.net"
+    "http://ziyougou.newnil.com"
   end
   
   
