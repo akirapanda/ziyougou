@@ -3,6 +3,7 @@
 # 2, @weixin_public_account: 如果配置了public_account_class选项,则会返回当前实例,否则返回nil.
 # 3, @keyword: 目前微信只有这三种情况存在关键字: 文本消息, 事件推送, 接收语音识别结果
 WeixinRailsMiddleware::WeixinController.class_eval do
+  include Rails.application.routes.url_helpers
 
   def reply
     render xml: send("response_#{@weixin_message.MsgType}_message", {})
@@ -82,7 +83,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
           # 扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送
           return reply_text_message("扫描带参数二维码事件: 1. 用户未关注时，进行关注后的事件推送, keyword: #{@keyword}")
         end
-        reply_text_message("关注公众账号")
+        reply_text_message("欢迎关注自由购物帮微信账号")
       end
 
       # 取消关注
@@ -117,13 +118,14 @@ WeixinRailsMiddleware::WeixinController.class_eval do
           end
 
           if @art.any?
-            reply_news_message(arts)
+           return reply_news_message(arts)
           else
-            ""
+            return ""
           end
+          
         end
         
-        ""
+        return ""
       end
 
       # 点击菜单跳转链接时的事件推送
