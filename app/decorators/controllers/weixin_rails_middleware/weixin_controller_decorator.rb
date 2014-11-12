@@ -129,7 +129,7 @@ WeixinRailsMiddleware::WeixinController.class_eval do
         elsif @keyword == "BUTTON_2_1"
           @setting = Setting.where(:key=>"BANGZHUJIESHAO")        
           if @setting.first
-            reply_text_message(@setting.value)
+            reply_text_message(@setting.first.value)
           else
             return ""
           end
