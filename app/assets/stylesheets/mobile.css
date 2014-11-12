@@ -12,7 +12,6 @@
  *= require ratchet_base
  *= require font-awesome
  *= require jquery.remodal
-
  *= require mobile/nav
  *= require mobile/mobiscroll.core-2.5.2
  *= require mobile/mobiscroll.animation-2.5.2
@@ -44,6 +43,34 @@ header.bar{
 	bottom:5px;
 	z-index:999;
 }
+
+
+.input-row label{
+  width: 30%;
+}
+.input-row input{
+  width: 65%;
+}
+
+.input-row select {
+  float: right;
+  width: 65%;
+  height:35px;
+  padding-left: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+
+
+form.input-group {
+	font-size:14px;
+}
+form.input-group input{
+	font-size:14px;
+}
+
+
 
 .focus .hd {
 	width:100%;
@@ -106,3 +133,8 @@ header.bar{
 .alert-block{padding-top:14px;padding-bottom:14px;}
 .alert-block>p,.alert-block>ul{margin-bottom:0;}
 .alert-block p+p{margin-top:5px;}
+
+
+
+
+

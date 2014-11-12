@@ -11,7 +11,7 @@
 	.seller_body a:visited{
 		color:black;
 	}
-	
+
 	.sell-content{
 		padding-top:5px;
 		padding-bottom:5px;
@@ -34,38 +34,106 @@
 
 <%= content_for :header do %>
 	<header class="bar bar-nav">
+		
 		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
+	  <a class="icon icon-search pull-right" data-remodal-target="modal"></a>
+		
 	  <h1 class="title"><i class="fa fa-fire"></i>
 		推荐商户</h1>
+		
+		
 	</header>
+	
+	
+	
 <% end %>
 
-<ul class="table-view seller_body">
-	<%@sellers.each do |seller|%>
-  <li class="table-view-cell ">
+
+
+<div class="seller_body">
+	<ul class="table-view ">
+		<%if @sellers.empty?%>
+		<li class="table-view-cell " style="padding-left:20px">
+	  	<h4 style="color:red">抱歉，当前条件下没有符合条件的记录。</h4>
+			<p>换个条件再试一下?</p>
+		</li>
+		
+		<%end%>
+		<%@sellers.each do |seller|%>
+	  <li class="table-view-cell ">
 	
-		<div class="seller ">
-			<%=link_to [:mobile,seller] ,"data-ignore"=>"push", :class=>"navigate-right" do%>	
+			<div class="seller ">
+				<%=link_to [:mobile,seller] ,"data-ignore"=>"push", :class=>"navigate-right" do%>	
 			
-			<div class="sell-logo">
-					<%=image_tag seller.logo_url(:normal),:class=>"seller_logo"%>
-			</div>
-			
-				<div class="sell-content ">
-						<h4><%=seller.name%></p>
-						<p><%=truncate seller.intro ,:length=>20%> </p>
+				<div class="sell-logo">
+						<%=image_tag seller.logo_url(:normal),:class=>"seller_logo"%>
 				</div>
-			<%end%>
-		</div>
-	</li>
-		
+			
+					<div class="sell-content ">
+							<h4><%=seller.name%></p>
+							<p><%=truncate seller.intro ,:length=>20%> </p>
+					</div>
+				<%end%>
+			</div>
+		</li>
+		<%end%>
+	</ul>
+</div>
 
-		
-	<%end%>
-</ul>
 
+<div id="remodal_window" class="remodal" data-remodal-id="modal">
+    <h1>查询</h1>
+		<%= search_form_for(@q,url: mobile_sellers_path,:html=>{:class=>"input-group"} ) do |f| %>
 
-	
+		  <div class="input-row">
+		    <label>品牌名称</label>
+		    <input type="text" placeholder="比如LAOX"></input>
+		  </div>
+		  <div class="input-row">
+		    <label>地区</label>
+				<%=f.select "nation_id_eq",options_from_collection_for_select(Nation.all,:id,:name),:include_blank=>true%>
+		  </div>
+			  <button class="btn btn-positive btn-block submit">查询</button>
+		<%end%>
+</div>
+<style>
+.remodal {
+	width:300px;
+	max-height:30%;
+	min-height:30%;
+	margin:auto;
+	padding-top:10px;
+	padding-left:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+}
+.remodal .submit{
+	margin-top:10px;
+}
+.remodal h1{
+	font-size:16px;
+	color:black;
+}
+.modal_content{
+	list-style-type:none;
+}
+.modal_content{
+	margin-top:0px;
+	margin-left:0px;
+	padding-left:0px;
+}
 
+.modal_content li{
+	padding-left:5%;
+	text-align:left;
+   border-bottom-width:1px;
+   border-bottom-style:solid;
+	border-bottom-color:grey;
+}
 
+.remodal .product_cover{
+	width:100%;
+	padding-left:0px;
+}
 
+</style>
