@@ -112,15 +112,15 @@ WeixinRailsMiddleware::WeixinController.class_eval do
           
           arts = []
           @recommend_events.each do |event|
-            cover_url = event.cover.nil? ? "" : "#{server_path}#{event.cover_url(:normal)}"
-            link_url = mobile_recommend_event_url(article)
+            cover_url = event.cover.nil? ? "" : "#{server_path}#{event.cover_url}"
+            link_url = mobile_recommend_event_url(event)
 
-            art = generate_article("#{event.title}", "#{event.breif}", "#{cover_url}",link_url)
+            art = generate_article("#{event.title}", "#{event.brief}", "#{cover_url}",link_url)
             arts << art
           end
 
           if arts.any?
-           return reply_news_message(arts)
+            return reply_news_message(arts)
           else
             return ""
           end
