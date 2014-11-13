@@ -2,17 +2,23 @@ class  Admin::DiscountCodesController < Admin::BaseController
 
     def to_cancel
       @discount_code = DiscountCode.find(params[:id]) 
-      
+      @discount_code.cancel
+      @discount_code.save
+      redirect_to [:admin,@discount_code], :notice=>"优惠券申请已被取消" 
     end
     
     def to_active
       @discount_code = DiscountCode.find(params[:id]) 
-      
+      @discount_code.active
+      @discount_code.save
+      redirect_to [:admin,@discount_code], :notice=>"优惠券申请已生效" 
     end
     
     def to_inactive
       @discount_code = DiscountCode.find(params[:id]) 
-      
+      @discount_code.inactive
+      @discount_code.save
+      redirect_to [:admin,@discount_code], :notice=>"优惠券申请已失效" 
     end
     
     def to_confirm

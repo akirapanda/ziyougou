@@ -47,7 +47,21 @@ module UserHelper
     session.delete(:return_to)
   end
 
+  def last_location(default)
+    if  session[:last_location]
+        url =  session[:last_location]
+        session.delete(:last_location)
+      return url
+    else
+      default
+    end
+  end
+  
   def store_location
     session[:return_to] = request.fullpath
+  end
+  
+  def store_last_location
+      session[:last_location] = request.env["HTTP_REFERER"].blank? ? "/" : request.env["HTTP_REFERER"]
   end
 end

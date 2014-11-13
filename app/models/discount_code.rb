@@ -9,9 +9,17 @@ class DiscountCode < ActiveRecord::Base
   has_one :shop, :through => :discount_event
   has_one :seller, :through => :shop
   belongs_to :user
-  validates :name,:mobile ,:out_fly_no , :in_fly_no ,:presence => true
+  validates :name,:mobile ,:out_fly_no , :in_fly_no ,:presence => true ,if: :public_code?
   
   STATUS = ["新申请", "处理中", "已生效", "已失效", "已取消"]
+
+  def public_code?
+    if self.discount_event
+      return self.discount_event.is_public_event?
+    else
+      return false
+    end
+  end
   
   aasm do
      state :new, :initial => true
@@ -52,7 +60,6 @@ class DiscountCode < ActiveRecord::Base
    end
    
    def inactive_code
-     
    end
    
    def cancel_code

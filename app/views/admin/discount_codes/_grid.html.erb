@@ -25,9 +25,11 @@
 	
 	
 	g.column do |code|
+		show = link_to raw("<button class=\"btn btn-mini btn-success\"><i class=\"icon-zoom-in bigger-120\"></i></button>"), admin_discount_code_path(code)
+		
 		edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_discount_code_path(code)
 		remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,code], method: :delete, data: { confirm: '确认删除优惠券申请记录吗?' }
-		raw "#{edit} #{remove}"
+		raw "#{show} #{edit} #{remove}"
 	end
 	
 end -%>

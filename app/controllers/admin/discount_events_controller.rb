@@ -5,10 +5,7 @@ class  Admin::DiscountEventsController < Admin::BaseController
       @discount_event = DiscountEvent.find(params[:id]) 
       @discount_codes_grid = initialize_grid(@discount_event.discount_codes,:per_page => 20)
     end
-    
-    def show
-      
-    end
+  
     
     
     def index
@@ -29,22 +26,25 @@ class  Admin::DiscountEventsController < Admin::BaseController
     end
 
     def create
+      store_last_location
       @discount_event = DiscountEvent.new(discount_event_params) 
       if @discount_event.save
-        redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"新建商户优惠活动成功!"
+        redirect_to last_location(discount_events_admin_shop_path(@discount_event.shop)),:notice=>"新建商户优惠活动成功!"
       else
         render 'new'
       end
     end
 
     def edit
+      store_last_location
       @discount_event = DiscountEvent.find(params[:id]) 
     end
 
     def update
+      
       @discount_event = DiscountEvent.find(params[:id]) 
       if @discount_event.update(discount_event_params)
-        redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"更新商户优惠活动成功"
+        redirect_to last_location(admin_discount_events_path),:notice=>"更新商户优惠活动成功!"
       else
         render 'edit'
       end
