@@ -29,7 +29,7 @@ class  Mobile::UsersController < Mobile::BaseController
       @user.update_attribute(:last_ip, request.remote_ip)
       redirect_to mobile_root_path, :flash => { :notice=> "欢迎登陆自由购物帮" }
     else
-      render 'new'
+      render 'new',layout: "mobile_login"
     end   
   end
   

@@ -13,8 +13,7 @@ body {
     text-align: left;
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
     color: #555;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 12px;
 }
 
 strong { font-weight: 700; }
@@ -34,7 +33,7 @@ a:hover { text-decoration: none; }
 .logo h1 {
     padding-left: 50px;
     font-family: 'Oleo Script', cursive;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 400;
 }
 
@@ -55,7 +54,7 @@ a:hover { text-decoration: none; }
 .links a.blog { background: url(/img/blog.png) center center no-repeat; margin-right: 50px; }
 
 .register-container {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 /* ----- iPhone ----- */
@@ -69,7 +68,7 @@ a:hover { text-decoration: none; }
 /* ----- Registration Form ----- */
 
 .register form {
-    padding: 20px 50px 40px 50px;
+    padding: 10px 10px 10px 10px;
     background: #f8f8f8 url(/img/pattern.jpg) left top repeat;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -81,18 +80,18 @@ a:hover { text-decoration: none; }
 }
 
 .register form h2 {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
     background: url(/img/pencil.png) 70px 6px no-repeat;
     border-bottom: 2px dotted #bbb;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 400;
     text-align: center;
 }
 
 .register form input {
     width: 95%;
-    height: 30px;
+    height: 25px;
     background: #fcfcfc;
     border: 1px solid #ddd;
     -moz-border-radius: 2px;
@@ -103,7 +102,7 @@ a:hover { text-decoration: none; }
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1) inset;
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
     color: #888;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .register form input:focus {
@@ -114,8 +113,7 @@ a:hover { text-decoration: none; }
 }
 
 .register form label {
-    margin: 7px 0 10px 5px;
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
 }
 
@@ -200,7 +198,7 @@ a:hover { text-decoration: none; }
 
     .links a.blog { margin-right: 0; }
 
-    .register-container { padding-left: 20px; padding-right: 20px; }
+    .register-container { padding-left: 10px; padding-right: 10px; }
 
     .register form h2 { background: none; }
 

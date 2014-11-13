@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  
+  attr_accessor :new_password
   
   validates :mobile, uniqueness: true
   validates :mobile,:password,:presence => true
