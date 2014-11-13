@@ -45,7 +45,11 @@ Ziyougou::Application.routes.draw do
         patch 'upload_code'
       end
     end
-    resources :users
+    resources :users do
+      member do
+        get 'passport'
+      end
+    end
   
   end
     

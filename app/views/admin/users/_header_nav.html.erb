@@ -1,0 +1,4 @@
+<%= render_list :class => "nav nav-pills" do |li|
+     li << link_to(t("基本信息"), [:admin,@user])
+     li << link_to(t("优惠券代码列表"), passport_admin_user_path(@user))
+end %>
