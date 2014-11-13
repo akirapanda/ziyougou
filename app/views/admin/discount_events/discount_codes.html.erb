@@ -30,7 +30,37 @@
 				</div>
 				
 				<div class="span8">
-					
+					<h3>优惠券申请记录列表</h3>
+					<%= grid(@discount_codes_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+
+						g.column :name => '系统编号', :attribute => 'id'  do |code|
+							link_to code.id,[:admin,code]
+						end
+
+
+
+						g.column :name => "申请账号" ,:attribute => "discount_event_id" do |code|
+							code.try(:user).try(:mobile)
+						end
+
+						g.column :name => "姓名" ,:attribute => "name" 
+
+
+
+						g.column :name => "状态" ,:attribute => "status" 
+
+
+
+
+						g.column do |code|
+							show = link_to raw("<button class=\"btn btn-mini btn-success\"><i class=\"icon-zoom-in bigger-120\"></i></button>"), admin_discount_code_path(code) ,:target=>"_blank"
+
+							edit =  link_to raw("<button class=\"btn btn-mini btn-info\"><i class=\"icon-edit bigger-120\"></i></button>"), edit_admin_discount_code_path(code),:target=>"_blank"
+							remove = link_to raw("<button class=\"btn btn-mini btn-danger\"><i class=\"icon-trash bigger-120\"></i></button>"), [:admin,code], method: :delete, data: { confirm: '确认删除优惠券申请记录吗?' }
+							raw "#{show} #{edit} #{remove}"
+						end
+
+					end -%>
 				</div>	
 			</div>
 	</div>

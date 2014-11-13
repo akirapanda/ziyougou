@@ -19,6 +19,7 @@ class  Admin::DiscountEventsController < Admin::BaseController
     end
     
     def new
+      store_last_location
       @discount_event = DiscountEvent.new
       if params[:shop_id]
         @discount_event.shop_id = params[:shop_id]
@@ -26,7 +27,6 @@ class  Admin::DiscountEventsController < Admin::BaseController
     end
 
     def create
-      store_last_location
       @discount_event = DiscountEvent.new(discount_event_params) 
       if @discount_event.save
         redirect_to last_location(discount_events_admin_shop_path(@discount_event.shop)),:notice=>"新建商户优惠活动成功!"
@@ -51,9 +51,10 @@ class  Admin::DiscountEventsController < Admin::BaseController
     end
 
     def destroy
+      store_last_location
       @discount_event = DiscountEvent.find(params[:id]) 
       @discount_event.destroy
-      redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"删除商户优惠活动成功"
+      redirect_to last_location(admin_discount_events_path),:notice=>"删除商户优惠活动成功!"      
     end
 
     private

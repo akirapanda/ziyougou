@@ -29,7 +29,7 @@ class DiscountCode < ActiveRecord::Base
      state :canceled
      
      event :confirm do
-       transitions :from => :new, 
+       transitions :from => [:new,:cancel,:inactive], 
                     :to => :confirmed,:on_transition => :confirm_code
      end
      

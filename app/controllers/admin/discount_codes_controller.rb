@@ -76,9 +76,10 @@ class  Admin::DiscountCodesController < Admin::BaseController
     end
 
     def destroy
+      store_last_location
       @discount_event = DiscountCode.find(params[:id]) 
       @discount_event.destroy
-      redirect_to discount_events_admin_shop_path(@discount_event.shop),:notice=>"删除商户优惠活动成功"
+      redirect_to last_location(admin_discount_code_path),:notice=>"删除优惠券代码成功!"      
     end
 
     private
