@@ -18,7 +18,7 @@
                     {
                         "type": "view", 
                         "name": "小帮优品", 
-				                "url": "http://m.wsq.qq.com/263468523", 
+                        "url": "http://m.wsq.qq.com/263468523", 
                         "sub_button": [ ]
                     }
                 ]
@@ -27,16 +27,15 @@
                 "type": "click", 
                 "name": "帮主介绍", 
                 "key": "BUTTON_2_1", 
-
                 "sub_button": [ ]
             }, 
             {
                 "name": "小帮账户", 
-								"sub_button": [
+                "sub_button": [
                     {
                         "type": "view", 
                         "name": "注册/登陆", 
-				                "url": "http://ziyougou.newnil.com/mobile", 
+                        "url": "http://ziyougou.newnil.com/mobile", 
                         "sub_button": [ ]
                     }, 
                     {
@@ -48,7 +47,7 @@
                     {
                         "type": "view", 
                         "name": "问题反馈", 
-				                "url": "https://jinshuju.net/f/HiwQTV", 
+                        "url": "https://jinshuju.net/f/HiwQTV", 
                         "sub_button": [ ]
                     }
                 ]
