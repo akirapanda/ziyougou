@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141116034224) do
+ActiveRecord::Schema.define(version: 20141116150309) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20141116034224) do
     t.string   "tw_passport_no"
     t.string   "out_fly_no"
     t.string   "in_fly_no"
+    t.date     "back_at"
   end
 
   create_table "discount_events", force: true do |t|

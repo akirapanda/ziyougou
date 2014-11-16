@@ -14,6 +14,19 @@
 	<%= f.input :tw_passport_no,:input_html=>{:class=>"input-xxlarge"}%>
 	<%= f.input :out_fly_no,:input_html=>{:class=>"input-xxlarge"}%>
 	<%= f.input :in_fly_no,:input_html=>{:class=>"input-xxlarge"}%>
+	<div class="control-group file optional discount_code_image">
+			<%=f.label :leave_at%>
+		<div class="controls">
+			<%= f.date_field :leave_at,:input_html=>{:class=>"input-xxlarge"},:label=>false%>
+		</div>
+	</div>
+	
+	<div class="control-group file optional discount_code_image">
+			<%=f.label :back_at%>
+		<div class="controls">
+			<%= f.date_field :back_at,:input_html=>{:class=>"input-xxlarge"},:label=>false%>
+		</div>
+	</div>
 
 	
 	

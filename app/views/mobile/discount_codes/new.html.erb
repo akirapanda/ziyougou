@@ -90,14 +90,23 @@
 		<%=f.text_field :tw_passport_no,:placeholder=>""%>
 	</div>
 	<div class="input-row">
+    <label>预计出境日期*</label>
+		<%=f.text_field :leave_at,:id=>"leave_at" %>
+	</div>
+	<div class="input-row">
     <label>出发航班号*</label>
 		<%=f.text_field :out_fly_no,:placeholder=>""%>
+	</div>
+	<div class="input-row">
+    <label>预计回国日期</label>
+		<%=f.text_field :back_at,:id=>"back_at" %>
 	</div>
 	<div class="input-row">
     <label>回国航班号*</label>
 		<%=f.text_field :in_fly_no,:placeholder=>""%>
 	</div>
-	
+
+
 	
 	<button class="btn btn-primary btn-block">提交</button>
 	<%=link_to mobile_discount_event_path(@code.discount_event_id), :class=>"btn  btn-block" ,"data-ignore"=>"push","data-transition"=>"slide-in" do%>
@@ -106,8 +115,25 @@
 	
 <%end%>
 
+
+
 <script>
 	$(document).ready(function(){
-  
+    var currYear = (new Date()).getFullYear();
+    var opt = {};
+    opt.date = { preset: 'date' };
+    opt.defaults = {
+        theme: 'android-ics light', //皮肤样式
+        display: 'modal', //显示方式 
+        mode: 'scroller', //日期选择模式
+        lang: 'zh',
+        startYear: currYear, //开始年份
+        endYear: currYear + 1, //结束年份
+				dateFormat: 'yy-mm-dd'
+    };
+		var optDateTime = $.extend(opt['date'], opt['defaults']);
+		$("#leave_at").mobiscroll(optDateTime);
+		$("#back_at").mobiscroll(optDateTime);
 	});
+	
 </script>

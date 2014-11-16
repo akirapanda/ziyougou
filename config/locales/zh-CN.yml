@@ -70,6 +70,8 @@
                 out_fly_no: "出发航班号"
                 in_fly_no: "回国航班号"
                 image: "优惠券图样"
+                leave_at: "出境日期"
+                back_at: "回国日期"
             recommend_event:
                 title: "标题"
                 brief: "简介"

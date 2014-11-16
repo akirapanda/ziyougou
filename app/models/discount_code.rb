@@ -9,7 +9,7 @@ class DiscountCode < ActiveRecord::Base
   has_one :shop, :through => :discount_event
   has_one :seller, :through => :shop
   belongs_to :user
-  validates :name,:mobile ,:out_fly_no , :in_fly_no ,:presence => true ,if: :public_code?
+  validates :name,:mobile ,:out_fly_no , :leave_at , :back_at ,:in_fly_no ,:presence => true ,if: :public_code?
   
   STATUS = ["新申请", "处理中", "已生效", "已失效", "已取消"]
 

@@ -33,7 +33,11 @@
 						<b>护照号码:</b><%= @discount_code.passport_no %></br>
 						<b>港澳通行证号码:</b><%= @discount_code.hk_passport_no %></br>
 						<b>入台证号码:</b><%= @discount_code.tw_passport_no %></br>
+						
+						<b>出境日期:</b><%=l @discount_code.leave_at if @discount_code.leave_at %><br/>
 						<b>出发航班号:</b><%= @discount_code.out_fly_no %></br>
+						
+						<b>回国日期:</b><%=l @discount_code.back_at if @discount_code.back_at %><br/>
 						<b>回国航班号:</b><%= @discount_code.in_fly_no %></br>
 						
 						
