@@ -39,10 +39,65 @@
 						  </div>
 						
 							<div class="control-group">
+						    <label class="control-label" for="inputEmail">护照号码</label>
+						    <div class="controls">
+									<%=f.text_field :passport_no_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">港澳通行证号码</label>
+						    <div class="controls">
+									<%=f.text_field :hk_passport_no_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">入台证号码</label>
+						    <div class="controls">
+									<%=f.text_field :tw_passport_no_cont%>
+						    </div>
+						  </div>
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">出国航班号</label>
+						    <div class="controls">
+									<%=f.text_field :out_fly_no_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label" for="inputEmail">回国航班号</label>
+						    <div class="controls">
+									<%=f.text_field :in_fly_no_cont%>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
 						    <label class="control-label" for="inputEmail">申请状态</label>
 						    <div class="controls">
 									<%= f.select "status_eq", options_for_select(DiscountCode::STATUS),:include_blank=>true%>	
 								</div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label">申请日期</label>
+						    <div class="controls">
+									<%= f.date_field :created_at_gteq, :include_blank => true %>  ~ 	<%= f.date_field :created_at_lteq, :include_blank => false %>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label">出国日期</label>
+						    <div class="controls">
+									<%= f.date_field :leave_at_gteq, :include_blank => true %>  ~ 	<%= f.date_field :leave_at_lteq, :include_blank => false %>
+						    </div>
+						  </div>
+						
+							<div class="control-group">
+						    <label class="control-label">回国日期</label>
+						    <div class="controls">
+									<%= f.date_field :back_at_gteq, :include_blank => true %>  ~ 	<%= f.date_field :back_at_lteq, :include_blank => false %>
+						    </div>
 						  </div>
 						<hr/>
 						  <%= f.submit "查询",:class=>"btn btn-block btn-primary" %>				  

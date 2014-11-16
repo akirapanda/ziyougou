@@ -36,20 +36,29 @@
 
 <ul class="table-view">
 	<li class="table-view-cell">
-		<image src="/images/100_100.jpg" class="shop-logo pull-left">
 		<h1><%=@shop.name%></h1>
 	</li>
 	<li class="table-view-cell">
-		<%=link_to "#", :class=>"navigate-right","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
+		<%=link_to "#", :class=>"","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
 			<i class="fa fa-map-marker"></i> <%=@shop.address%>
 		<%end%>
 	</li>
+	
+	<li class="table-view-cell">
+		<i class="fa fa-clock-o"></i>	营业时间:<%=@shop.business_time%>
+	</li>
+	
+
+	
 	<li class="table-view-cell">
 		<%=link_to "#", :class=>"","data-ignore"=>"push", "data-transition"=>"slide-in" do%>
 			<i class="fa fa-phone"></i> <%=@shop.phone%>
 		<%end%>
 	</li>
 	
+	<li class="table-view-cell">
+		<i class="fa fa-car"></i>	如何到达:<%=@shop.traffic_info%>
+	</li>
 	<li class="table-view-cell shop-event-header">
 		<h3><i class="fa fa-star-o"></i>商户介绍</h3>
 	</li>

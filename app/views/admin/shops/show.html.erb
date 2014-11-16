@@ -35,8 +35,10 @@
 				</div>
 				
 				<div class="span8">
-					<b>详细介绍</b>
-					<hr/>
+					<b>营业时间:</b><p><%=@shop.business_time%></p>
+					<b>如何到达:</b><p><%=@shop.traffic_info%></p>
+					
+					<b>详细介绍:</b>
 					<%=raw @shop.content%>
 				</div>	
 			</div>

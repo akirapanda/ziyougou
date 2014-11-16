@@ -52,7 +52,7 @@
                 address: "地址"
                 phone: "电话"
                 business_time: "营业时间"
-                traffic_info: "交通"
+                traffic_info: "如何到达"
             discount_event:
                 name: "优惠活动名称"
                 event_type: "活动类型"
