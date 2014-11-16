@@ -4,9 +4,9 @@
                 "name": "帮主优惠", 
                 "sub_button": [
                     {
-                        "type": "click", 
+                        "type": "view", 
                         "name": "商户优惠", 
-                        "key": "BUTTON_1_1", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa23d51b8ca41d345&redirect_uri=http://ziyougou.newnil.com/mobile/sellers&response_type=code&scope=snsapi_base&state=0#wechat_redirect", 
                         "sub_button": [ ]
                     }, 
                     {
@@ -35,7 +35,7 @@
                     {
                         "type": "view", 
                         "name": "注册/登陆", 
-                        "url": "http://ziyougou.newnil.com/mobile", 
+                        "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa23d51b8ca41d345&redirect_uri=http://ziyougou.newnil.com/mobile/signin&response_type=code&scope=snsapi_base&state=0#wechat_redirect", 
                         "sub_button": [ ]
                     }, 
                     {
@@ -58,4 +58,5 @@
 lkfjale@126.com
 wykj12345
 
+wxa23d51b8ca41d345
 087d57aeb67a8c73ddfb8ab4dd646c60
