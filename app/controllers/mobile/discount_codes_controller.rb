@@ -23,7 +23,7 @@ class  Mobile::DiscountCodesController < Mobile::BaseController
     @code.user_id = current_user.id
     
      
-    unless @code.passport_no.present? && @code.hk_passport_no.present? && @code.tw_passport_no.present?
+    unless @code.passport_no.present? || @code.hk_passport_no.present? || @code.tw_passport_no.present?
       @code.errors.add("请填写", "护照号码/港澳通行证/入台证至少填写一个")
       render 'new'
       return
