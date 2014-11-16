@@ -133,6 +133,35 @@ WeixinRailsMiddleware::WeixinController.class_eval do
           else
             return ""
           end
+        elsif @keyword == "BUTTON_3_2"
+          open_id = @weixin_message.FromUserName
+          @user = User.find_by(:open_id=>open_id)
+          if @user
+            @discount_codes = @user.discount_codes
+            
+            if @discount_codes.empty?
+              reply_text_message("暂无任何优惠券")
+            else
+              arts = []
+              @discount_codes.each do |code|
+                image_url = ""
+                if code.public_code?
+                  image_url = code.try(:discount_event).try(:ticket_image_url)
+                else
+                  image_url = code.image_url
+                end
+                
+                image_url = "#{server_path}#{image_url}"
+                link_url = mobile_discount_code_url(code)
+                logger.debug("link is #{link_url} and  cover is #{image_url}")
+                art = generate_article("#{code.try(:discount_event).try(:name)}", "#{code.try(:discount_event).try(:intro)}", "#{image_url}",link_url)
+                arts << art
+              end
+              return reply_news_message(arts)
+            end
+          else
+            return reply_text_message("您未绑定登陆过自游购物帮平台,请在点击上方逐注册/登陆菜单后,再查看小帮优惠券")
+          end
         else
           return ""
         end

@@ -13,6 +13,7 @@ class DiscountCode < ActiveRecord::Base
   
   STATUS = ["新申请", "处理中", "已生效", "已失效", "已取消"]
 
+  
   def public_code?
     if self.discount_event
       return self.discount_event.is_public_event?
@@ -20,6 +21,7 @@ class DiscountCode < ActiveRecord::Base
       return false
     end
   end
+  
   
   aasm do
      state :new, :initial => true
