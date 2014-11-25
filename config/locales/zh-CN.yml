@@ -61,6 +61,7 @@
                 end_date: "结束日期"
                 ticket_image: "优惠券图样"
                 is_visible: "用户可见状态"
+                discount_info: "优惠信息"
             discount_code:
                 name: "姓名"
                 mobile: "手机"

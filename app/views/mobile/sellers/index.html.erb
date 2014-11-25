@@ -1,7 +1,19 @@
 <style>
 
+.content{
+	background: url('/images/black-bg.png') repeat; 
+}
+
+
 	.seller{
-		width: 100%;
+		margin-left:20px;
+		background-color:#F5F5F5;
+		margin-right:20px;
+		margin-top:10px;
+		padding-top:10px;
+		padding-right:20px;
+		padding-left:10px;
+		padding-bottom:10px;
 	}
 	
 	.seller_body a, .seller_body a:hover, .seller_body a:link{
@@ -12,20 +24,40 @@
 		color:black;
 	}
 
-	.sell-content{
-		padding-top:5px;
-		padding-bottom:5px;
-		
-		padding-left:30px;
-		background-color:#F5F5F5;
+	.seller-body p{
+		float:left; width:100px; line-height:16px; color:#646464;word-wrap: break-word; word-break: normal;
 	}
-	.seller_logo{
-		width:100%;
-		vertical-align:middle;
+	.seller-body img{
+		float:left; margin-right:5px;
+		width:60%;
+	}
+
 	
-	}
+
 	.table-view-cell{
 		padding:0px 0px 0px 0px;
+	}
+	
+	h4 small{
+		padding-right:20px;
+		padding-left:10px;
+	}
+
+	.clearfix:before,
+	.clearfix:after {
+	    content: "";
+	    display: table;
+	}
+	.clearfix:after {
+	    clear: both;
+	}
+	
+	.end_date{
+		color:grey;
+		font-size:14px;
+	}
+	.zhekou{
+		float:right;
 	}
 </style>
 
@@ -51,7 +83,7 @@
 
 
 <div class="seller_body">
-	<ul class="table-view ">
+	<ul class="">
 		<%if @sellers.empty?%>
 		<li class="table-view-cell " style="padding-left:20px">
 	  	<h4 style="color:red">抱歉，当前条件下没有符合条件的记录。</h4>
@@ -60,19 +92,29 @@
 		
 		<%end%>
 		<%@sellers.each do |seller|%>
-	  <li class="table-view-cell ">
-	
-			<div class="seller ">
-				<%=link_to [:mobile,seller] ,"data-ignore"=>"push", :class=>"navigate-right" do%>	
-			
-				<div class="sell-logo">
-						<%=image_tag seller.logo_url(:normal),:class=>"seller_logo"%>
+	  <li class="">
+			<div class="seller">
+				<%=link_to [:mobile,seller] ,"data-ignore"=>"push", :class=>"" do%>	
+				<div class="sell-header">
+					<h4>
+						<small>
+							<%=image_tag seller.try(:nation).try(:flag_image)%><%=seller.try(:nation).try(:name)%>
+						</small>
+						<%=seller.name%>
+					</h4>
 				</div>
-			
-					<div class="sell-content ">
-							<h4><%=seller.name%></p>
-							<p><%=truncate seller.intro ,:length=>20%> </p>
-					</div>
+				
+				<div class="seller-body clearfix">
+					<%=image_tag seller.logo_url(:normal),:class=>"seller_logo"%> 
+
+					<p><%=truncate seller.intro ,:length=>40%> </p>
+				</div>
+				<hr/>
+				<div class="seller-footer">
+					<%last_event=seller.last_discount_event%>
+					<span class="end_date">结束日期:<%= l last_event.end_at  if last_event.end_at%></span>
+					<span class="zhekou badge badge-primary"><%=last_event.discount_info%></span>
+				</div>
 				<%end%>
 			</div>
 		</li>
