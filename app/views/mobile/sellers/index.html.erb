@@ -72,7 +72,7 @@
 	  <h1 class="title"><i class="fa fa-fire"></i>
 		推荐商户</h1>
 		
-		<a class="icon icon-search pull-right" data-remodal-target="modal"></a>
+		<a class="icon icon-search pull-right"></a>
 	  
 	</header>
 	
@@ -138,6 +138,9 @@
 			  <button class="btn btn-positive btn-block submit">查询</button>
 		<%end%>
 </div>
+
+
+
 <style>
 .remodal {
 	width:300px;
@@ -179,3 +182,12 @@
 }
 
 </style>
+
+
+<script>
+$(document).ready(function(){
+  $(".icon-search").click(function(){
+		var inst = $.remodal.lookup[$('[data-remodal-id=modal]').data('remodal')];
+		inst.open();  });
+});
+</script>
