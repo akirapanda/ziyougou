@@ -66,14 +66,14 @@
 
 <%= content_for :header do %>
 	<header class="bar bar-nav">
-		
-		<a class="icon icon-left-nav pull-left" onclick="window.history.back()"></a>
-	  <a class="icon icon-search pull-right" data-remodal-target="modal"></a>
+		<%=link_to mobile_root_path, "data-ignore"=>"push",:class=>"icon icon-left-nav pull-left", "data-transition"=>"slide-in" do%>
+		<%end%>
 		
 	  <h1 class="title"><i class="fa fa-fire"></i>
 		推荐商户</h1>
 		
-		
+		<a class="icon icon-search pull-right" data-remodal-target="modal"></a>
+	  
 	</header>
 	
 	
