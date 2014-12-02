@@ -26,8 +26,61 @@ class Mobile::SessionsController < Mobile::BaseController
     end
   end
 
+
+  def lost_password
+    
+  end
+  
+  
+  def send_password
+    user = User.find_by(:mobile=>params[:session][:mobile],:email=>params[:session][:email])
+    unless user
+      flash[:error]="用户信息错误"
+      render 'lost_password'
+      return 
+    end
+    
+    PasswordMailer.send_reset_token(user).deliver
+  end
+  
+  def reset_password
+    token = params[:token]
+    @user  =  User.find_by(:reset_token=>token)
+    if @user.nil?
+      render :text=>"链接无效"
+    end
+  end
+  
+  def change_password
+    token = params[:user][:reset_token]
+    @user  =  User.find_by(:reset_token=>token)
+    @user.new_password = params[:user][:new_password]
+    @user.new_password_confirmation = params[:user][:new_password_confirmation]
+    @user.password = @user.new_password
+    if @user.new_password.size < 6
+      @user.errors[:new_password] =  "密码长度不正确，应该在6到16位之间"
+      render 'reset_password'
+      return
+    end
+    
+    if @user.save
+      @user.reset_token = nil
+      @user.reset_token_at = nil
+      @user.save
+    else
+      render 'reset_password'
+    end
+  end
+  
   def destroy
     user_sign_out
     redirect_to mobile_root_path
   end
+  
+  private    
+  def user_params
+    params.require(:user).permit!
+  end
+  
+  
 end

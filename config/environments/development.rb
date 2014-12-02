@@ -26,4 +26,22 @@ Ziyougou::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {  
+    :address              => 'smtp.exmail.qq.com',
+    :port                 => 25,  
+    :domain               => 'exmail.qq.com',  
+    :user_name            => 'rd@newnil.com',  
+    :password             => 'Akira86',  
+    :authentication       => :login,  
+    :enable_starttls_auto => true,  
+    :openssl_verify_mode  => 'none' # Only use this option for a self-signed and/or wildcard certificate
+  }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.raise_delivery_errors = true
+  
+  
+  
 end

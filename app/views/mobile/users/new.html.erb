@@ -7,7 +7,8 @@
 				 	<h3> <span class="red"><strong>自游购物帮</strong></span></h3>
 						<%=f.label :mobile%>
 						<%=f.text_field :mobile,:placeholder=>"手机号"%>
-				    
+				    <%=f.label :email%>
+						<%=f.text_field :email,:placeholder=>"常用邮件地址"%>
 						<%=f.label :new_password%>
 						<%=f.password_field :new_password,:placeholder=>"密码"%>
 						
@@ -15,7 +16,7 @@
 						
 						<%=f.password_field :new_password_confirmation,:placeholder=>"确认密码"%>
 						<div>
-						<input type="checkbox" value="checkbox1" style="width:30px" checked disabled/ >
+						<input type="checkbox"  name="agree_box" style="width:30px" <%= "checked='checked'"if @checked%>/ >
 						<a href="#agreement" role="button"  data-toggle="modal">我已经阅读《用户协议》</a>
 						
 						</div>

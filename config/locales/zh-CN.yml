@@ -78,7 +78,7 @@
                 brief: "简介"
                 cover: "封面图"
             user:
-                email: "用户名"
+                email: "邮件地址"
                 password: "密码"
                 new_password: "密码"
                 
@@ -94,3 +94,6 @@
                 name: "参数名"
                 key: "参数代码"
                 value: "参数值"
+            session:
+                new_password: "密码"
+                new_password_confirmation: "密码确认"

@@ -8,14 +8,11 @@ class User < ActiveRecord::Base
   
   validates :mobile, uniqueness: true
   validates :mobile,:password,:presence => true
-  
+  validates :email, :presence => true, :uniqueness => {:case_sensitive => false}, :format => {:with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/}
   validates :new_password, confirmation: true
   validates_length_of :new_password, :within => 6..16, message: '密码长度不正确，应该在6到16位之间', on: :create
-  
-  
   validates :mobile,length: { is: 11 }
   validates :mobile, format: { with: /\A\+?[\d]*-?[\d]*\z/, message: ' 电话只能输入数字'}
-
   has_many :discount_codes
   
   

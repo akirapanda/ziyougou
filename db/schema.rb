@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125063316) do
+ActiveRecord::Schema.define(version: 20141202033459) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -170,6 +170,8 @@ ActiveRecord::Schema.define(version: 20141125063316) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "open_id"
+    t.string   "reset_token"
+    t.datetime "reset_token_at"
   end
 
   create_table "wx_users", force: true do |t|

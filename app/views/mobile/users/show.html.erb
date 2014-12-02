@@ -25,10 +25,10 @@
 	      手机:<%=@user.mobile%>
 	  </li>
 	  <li class="table-view-cell">
-	      姓名:<%=@user.name%>
+	      邮件地址:<%=@user.email%>
 	  </li>
 	</ul>
-	<%= link_to mobile_signout_path,:class=>"btn btn-block","data-ignore"=>"push",:method=>:delete do%>
+	<%= link_to mobile_signout_path,:class=>"btn btn-block btn-negetive","data-ignore"=>"push",:method=>:delete do%>
 	 	注销登录
 	<%end%>
 </div>

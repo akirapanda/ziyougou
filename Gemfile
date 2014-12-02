@@ -13,8 +13,8 @@ gem 'execjs'
 #WEIXIN
 gem 'weixin_rails_middleware'
 gem 'twitter_ratchet_rails'
-
-
+#SMS
+gem 'china_sms'
 # 上传组件
 gem 'carrierwave', '0.6.2'
 gem 'mini_magick'

@@ -23,6 +23,14 @@ class  Mobile::UsersController < Mobile::BaseController
    
   def create
     @user = User.new(user_params)
+    @checked=false
+    unless params[:agree_box].present?
+      @user.errors.add("请确认用户协议", "")
+      render 'new',layout: "mobile_login"
+      return
+    end
+    @checked = true
+    
     @user.password = @user.new_password
     if @user.save
       user_sign_in @user

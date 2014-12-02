@@ -75,6 +75,10 @@ Ziyougou::Application.routes.draw do
     match '/signin',    to: 'sessions#new',           via: 'get'
     match '/signout',   to: 'sessions#destroy',       via: 'delete'
     match '/index',     to: 'home#index',             via: 'get'
+    match '/forget_password',   to: 'sessions#lost_password',       via: 'get'
+    match '/send_password',   to: 'sessions#send_password',       via: 'post'
+    match '/reset_password',   to: 'sessions#reset_password',       via: 'get'
+    match '/change_password',   to: 'sessions#change_password',       via: 'patch'
     
 
     resources :discount_codes do
