@@ -112,8 +112,10 @@
 				<hr/>
 				<div class="seller-footer">
 					<%last_event=seller.last_discount_event%>
+					<%if last_event%>
 					<span class="end_date">结束日期:<%= l last_event.end_at  if last_event.end_at%></span>
 					<span class="zhekou badge badge-primary"><%=last_event.discount_info%></span>
+					<%end%>
 				</div>
 				<%end%>
 			</div>
