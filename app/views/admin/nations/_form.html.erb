@@ -1,0 +1,10 @@
+<%=render 'shared/error_messages',:target=>@nation%>
+
+<%=simple_form_for([:admin,@nation],:html=>{:class=>"form-horizontal"}) do |f|%>
+	<%= f.input :name,:input_html=>{:class=>"input-xxlarge"}%>
+	<%= f.input :flag_filename,:input_html=>{:class=>"input-xxlarge"}%>
+
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary">保存</button> 
+	</div> 
+<%end%>

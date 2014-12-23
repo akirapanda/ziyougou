@@ -1,0 +1,11 @@
+<%= grid(@nations_grid, show_filters: :when_filtered, hide_csv_button: true) do |g|
+	g.column :name => '国旗图案', :attribute => 'flag_filename'  do |nation|
+		image_tag nation.flag_filename_url
+	end
+	g.column :name => '地区名称', :attribute => 'name'  
+	
+
+	g.column do |nation|
+		render 'grid_ops',:nation=>nation
+	end
+end -%>

@@ -1,0 +1,15 @@
+<ul class="nav nav-pills">
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" style="padding:0px;" href="#" >选择操作<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+								<%=link_to edit_admin_nation_path(nation) do%>
+									<i class="fa fa-edit"></i>编辑
+								<%end%>
+            <li>
+							<%=link_to  [:admin,nation] ,:method=>:delete ,data: { confirm: '确定删除记录吗?'} do%>
+								<i class="fa fa-trash-o"></i>删除
+							<%end%>
+						</li>
+        </ul>
+    </li>
+</ul>

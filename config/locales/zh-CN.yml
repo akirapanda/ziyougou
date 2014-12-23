@@ -36,6 +36,9 @@
                 wx_role_id: "用户权限"
                 status: "状态"
                 open_id: "微信ID"
+            nation:
+                name: "地区名称"
+                flag_filename: "国旗图案"
             seller:
                 name: "名称"
                 logo: "LOGO图标"

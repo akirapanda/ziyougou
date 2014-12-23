@@ -7,6 +7,8 @@ Ziyougou::Application.routes.draw do
   namespace :admin do
     root :to => 'home#index'
     
+    resources :nations
+    
     resources :sellers do
       member do 
         get "shops"

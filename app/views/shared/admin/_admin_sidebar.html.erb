@@ -86,7 +86,7 @@
 			        
 			    </ul>
 			</li>
-			<li class="<%=active_side_link(['admin_users'])%>">
+			<li class="<%=active_side_link(['admin_users',"nations"])%>">
 			    <a class='dropdown-collapse ' href='#'>
 			        <i class='icon-cog'></i>
 			        <span>系统设置</span>
@@ -99,12 +99,18 @@
 		                <span>系统管理员设置</span>
 							<%end%>
 		        </li>
-			        <li class=''>
-								<%=link_to admin_settings_path do%>
+			      <li class=''>
+							<%=link_to admin_settings_path do%>
 			                <i class='icon-caret-right'></i>
 			                <span>系统参数设置</span>
-								<%end%>
-			        </li>
+							<%end%>
+			       </li>
+			      <li class=''>
+							<%=link_to admin_nations_path do%>
+			                <i class='icon-caret-right'></i>
+			                <span>国家地区设置</span>
+							<%end%>
+			       </li>
 				   </ul>
 			</li>
 
